@@ -1,0 +1,310 @@
+
+
+<style>
+li{
+  display: inline;
+}
+.border{
+ border-left:  solid 3px  #3F51B5;
+}
+
+.title1{
+  margin:5%;
+}
+#border{
+ background-color: #3F51B5;
+ height:1px;
+}
+.card.medium{
+  width:600px;
+}
+#contain{
+  border-right:solid 2px #3F51B5;
+}
+.recommanded{
+ 
+padding:5%;
+
+}
+.recommanded.img{
+  margin-right: auto;
+margin-left: auto;
+}
+.center{
+  margin-left:28%;
+}
+img.responsive-img{
+max-width: 70%;
+min-width:50%;
+}
+table td{
+  border-top: none !important;
+}
+.border-left{
+  border-left:  solid 2px #3F51B5;
+}
+.border-bottom{
+  border-bottom:solid 2px #3F51B5;;
+}
+.card.medium .card-content{
+  height:100px;
+}
+.imagesclass.card.medium{
+  height:200px;
+}
+#border1{
+ background-color: #3F51B5;
+ height:2px;
+}
+ul.redirect{
+  font-size: 18px;
+}
+.bold{
+  font-weight:bolder;
+  margin-bottom: 2%;
+}
+.boldless{
+  font-weight:bolder;
+}
+</style>
+
+
+  <div class="container">
+	<div class="header">
+	</div>
+<div class="row">
+	<div class="text-center col-md-12 "><h3>RoboDB</h3></div>
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="redirect">
+        <li><a href="#/datarobo">Eskimo/</a></li>&nbsp;&nbsp;&nbsp;&nbsp;
+        <li><a href="#/123RF">123RF/</a></li>
+        
+       
+      </ul>
+    </div>
+  </div>
+</div>
+   <div class="row">
+   	 
+   	 	<div class="col-md-10 col-md-offset-2 darken-4">
+   	 		 <nav class="indigo">
+            
+    <div class="nav-wrapper">
+       <nav class="indigo">
+
+    <div class="nav-wrapper">
+
+      <form>
+        
+        <div class="text-center input-field">
+          <input id="search" type="search" required ng-model="text">
+          <label for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+    </div>
+  </nav>
+
+   	 			
+   	 	
+   	    </div>
+   </div><br><br>
+   <hr id="border1">
+  
+  <div class="main">
+<div class="row">
+<div class="recommanded col-md-3"><!--vertical divison-->
+  <div class="row">
+     <div class="text-center title1 col-md-12">
+     <h6>Recommended</h6>
+     <hr id="border">
+  
+     </div>
+  </div>
+  <div class="row">
+     <div class=" center col-md-12 col-xs-5 col-sm-4" >
+     	<img class="responsive-img" src="images/Asimo.jpg"/>
+     </div>
+  </div>
+  <div class="row">
+     <div class=" center col-md-12 col-xs-5 col-sm-4">
+     	<img class="img-responsive" src="images/123RF.jpg"/>
+     </div>
+  </div>
+  <!--latest section-->
+<div class="row">
+     <div class="text-center title1 col-md-12">
+     <h6>Latest Robots</h6>
+     <hr id="border">
+  
+     </div>
+</div>
+<div class="row">
+     <div class=" center col-md-12 col-xs-5 col-sm-4" >
+      <img class="responsive-img" src="images/quickscat.jpg"/>
+     </div>
+  </div>
+
+</div>
+<div class="border col-md-9"><!--card portion-->
+  <div class="row">
+  
+    <div class="row">
+        <div class="col-md-11 col-md-offset-1">
+          <div  class="card medium">
+            <div class="row clearfix">
+
+              <div ng-repeat="robots in robo" class="col-md-6 col-sm-4 col-xs-4">
+                <div class="card-image"><!--card image-->
+                  <img class="thumbnail responsive-img" ng-src="images/{{robots.name}}.jpg">
+              
+                 </div>
+              </div>
+              <div ng-repeat="robots in robo" style="padding-top:2%" class= "col-md-6 col-sm-8 col-xs-8">
+              
+              <div style="font-size:20px" class="bold text-center">
+               
+               {{robots.name}}<br>
+               </div>
+               <table class="table">
+                  <tbody>
+                       <tr>
+                         <td class="boldless">Technology</td>
+                         <td>{{robots.technology}}</td>
+                       </tr>
+                       <tr>
+                        <td class="boldless">Locomotion
+                        </td>
+                        <td>{{robots.locomotion}}
+                        </td>
+                        </tr>
+                        <tr>
+                          <td class="boldless">Country</td>
+                         <td>{{robots.country}}
+                        </td>
+                       </tr>
+                  </tbody>
+               </table>
+               <!-- <td>Locomotion</td>
+                         <td>Job</td>
+                         <td>Country</td>-->
+              </div>
+          </div>
+         <div  ng-repeat="robots in robo"class="row">
+          <hr id="border">
+          <div class="col-md-12">
+            <tr>
+              <td>Homepage:</td>
+              <td><a>{{robots.titleImage}}</a></td>
+            </tr>
+             <tr>
+              <td>Wikipage</td>
+              <td></td>
+             </tr>
+          </div>
+         </div>
+          </div>
+        </div>
+      </div>
+   <div class="row clearfix">
+   
+
+   </div>         
+
+</div>
+
+   <div class="row"><!--description section-->
+  
+    <div class="row">
+        <div class="col-md-11 col-md-offset-1">
+          <div  class="card medium">
+            <div class="row clearfix">
+
+              <div class="col-md-12">
+                <div class="card-content"><!--card image-->
+                  <div class=" row">
+                    <table class="border-bottom table">
+                      <tr>
+                        <td >Description</td>
+                        <td class="border-left">....</td>
+                        <td class="border-left">....</td>
+                      </tr>
+                     
+                    </table>
+                  </div>
+                     
+                                  
+                 </div>
+                    <table class="table">
+             <tr>
+                <td>Lorem ipsum dolor</td>
+             </tr>
+             <tr>
+                <td>Lorem ipsum dolor</td>
+             </tr>
+             <tr>
+                <td>Lorem ipsum dolor</td>
+             </tr>
+          </table>
+              </div>
+          
+          </div>
+          
+          </div>
+        </div>
+      </div>
+         <!--images section-->
+
+    <div class="row">
+        <div class=" col-md-11 col-md-offset-1">
+          <div  class="imagesclass card medium">
+            <div class="row clearfix">
+
+              <div class="col-md-6 col-sm-4 col-xs-4">
+                <div class="card-image"><!--card image-->
+                  <h6>Images</h6>
+              
+                 </div>
+              </div>
+              
+          </div>
+         
+          </div>
+        </div><!--images section complete-->
+        <!--videos  section-->
+        <div class=" col-md-11 col-md-offset-1">
+          <div  class="imagesclass card medium">
+            <div class="row clearfix">
+
+              <div class="col-md-6 col-sm-4 col-xs-4">
+                <div class="card-image"><!--card image-->
+                  
+                 <h6>Videos</h6>
+                 </div>
+              </div>
+              
+          </div>
+         
+          </div>
+        </div>
+     <!--row end-->       
+
+</div>
+
+	</div>
+
+
+</div>
+
+  </div>
+  <div class="row clearfix">
+    <div class="text-center"><h5>Related Robots</h5></div>
+   <hr id="border1">
+   <div class="col-md-12">
+
+   </div>
+   </div>
+</div>
