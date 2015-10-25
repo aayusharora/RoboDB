@@ -116,7 +116,7 @@ ul.redirect{
   
   <div class="main">
 <div class="row">
-<div class="recommanded col-md-3"><!--vertical divison-->
+<div class="card recommanded col-md-3"><!--vertical divison-->
   <div class="row">
      <div class="text-center title1 col-md-12">
      <h6>Recommended</h6>
@@ -149,21 +149,22 @@ ul.redirect{
   </div>
 
 </div>
+
 <div class="border col-md-9"><!--card portion-->
   <div class="row">
   
     <div class="row">
-        <div class="col-md-11 col-md-offset-1">
+        <div class="col-md-11 col-md-offset-1 col-sm-6 col-xs-6">
           <div  class="card medium">
             <div class="row clearfix">
 
-              <div ng-repeat="robots in robo" class="col-md-6 col-sm-4 col-xs-4">
+              <div ng-repeat="robots in robo" class="col-md-6 col-sm-6 col-xs-6">
                 <div class="card-image"><!--card image-->
                   <img class="thumbnail responsive-img" ng-src="images/{{robots.name}}.jpg">
               
                  </div>
               </div>
-              <div ng-repeat="robots in robo" style="padding-top:2%" class= "col-md-6 col-sm-8 col-xs-8">
+              <div ng-repeat="robots in robo" style="padding-top:2%" class= "col-md-6 col-sm-6 col-xs-6">
               
               <div style="font-size:20px" class="bold text-center">
                
