@@ -11,7 +11,7 @@ li{
 .title1{
   margin:5%;
 }
-#border{
+.border1{
  background-color: #3F51B5;
  height:1px;
 }
@@ -37,6 +37,7 @@ img.responsive-img{
 max-width: 70%;
 min-width:50%;
 }
+
 table td{
   border-top: none !important;
 }
@@ -46,8 +47,8 @@ table td{
 .border-bottom{
   border-bottom:solid 2px #3F51B5;;
 }
-.card.medium .card-content{
-  height:100px;
+.card.large .card-content {
+    height: 70px;
 }
 .imagesclass.card.medium{
   height:200px;
@@ -65,6 +66,10 @@ ul.redirect{
 }
 .boldless{
   font-weight:bolder;
+}
+.main{
+  margin-left: 15%;
+  margin-top: 2%;
 }
 </style>
 
@@ -114,19 +119,19 @@ ul.redirect{
    </div><br><br>
    <hr id="border1">
   
-  <div class="main">
+  <div class="main" >
 <div class="row">
 <div class="card recommanded col-md-3"><!--vertical divison-->
   <div class="row">
      <div class="text-center title1 col-md-12">
      <h6>Recommended</h6>
-     <hr id="border">
+     <hr class="border1">
   
      </div>
   </div>
   <div class="row">
-     <div class=" center col-md-12 col-xs-5 col-sm-4" >
-     	<img class="responsive-img" src="images/Asimo.jpg"/>
+     <div class=" center col-md-12 col-xs-5 col-sm-4"  ng-repeat="robots in robo">
+     	<img class="  responsive-img" ng-src="{{robots.titleImage}}"/>
      </div>
   </div>
   <div class="row">
@@ -138,7 +143,7 @@ ul.redirect{
 <div class="row">
      <div class="text-center title1 col-md-12">
      <h6>Latest Robots</h6>
-     <hr id="border">
+     <hr class="border1">
   
      </div>
 </div>
@@ -154,17 +159,17 @@ ul.redirect{
   <div class="row">
   
     <div class="row">
-        <div class="col-md-11 col-md-offset-1 col-sm-6 col-xs-6">
-          <div  class="card medium">
+        <div class="col-md-11 col-md-offset-1 col-sm-12 col-xs-12">
+          <div  class="card">
             <div class="row clearfix">
 
-              <div ng-repeat="robots in robo" class="col-md-6 col-sm-6 col-xs-6">
+              <div ng-repeat="robots in robo" class="col-md-6 col-sm-12 col-xs-12">
                 <div class="card-image"><!--card image-->
-                  <img class="thumbnail responsive-img" ng-src="images/{{robots.name}}.jpg">
+                  <img class="main thumbnail responsive-img" ng-src="{{robots.titleImage}}"/>
               
                  </div>
               </div>
-              <div ng-repeat="robots in robo" style="padding-top:2%" class= "col-md-6 col-sm-6 col-xs-6">
+              <div ng-repeat="robots in robo" style="padding-top:2%" class= "col-md-6 col-sm-12 col-xs-12">
               
               <div style="font-size:20px" class="bold text-center">
                
@@ -174,8 +179,29 @@ ul.redirect{
                   <tbody>
                        <tr>
                          <td class="boldless">Technology</td>
-                         <td>{{robots.technology}}</td>
+                         <td>
+                          <ul ng-repeat ="robots in robo">
+                          <li>{{robots.technology[0]}}</li>
+                          <li>{{robots.technology[1]}}</li>
+                          <li>{{robots.technology[2]}}</li>
+                          <li>{{robots.technology[3]}}</li>
+                                        <!---Not working-->
+                        </ul>
+                        </td>
+                         
                        </tr>
+                       <tr>
+                        <td class="boldless">Job
+                        </td>
+                        <td>
+                          <ul><!--not the right way-->
+                                 <li>{{robots.job[0]}} </br></li>                   
+                                 <li>{{robots.job[1]}}</br></li> 
+                                 <li>{{robots.job[2]}}</br></li> 
+                                 
+                            </ul>
+                        </td>
+                        </tr>
                        <tr>
                         <td class="boldless">Locomotion
                         </td>
@@ -196,14 +222,14 @@ ul.redirect{
           </div>
          <div  ng-repeat="robots in robo"class="row">
           <hr id="border">
-          <div class="col-md-12">
+          <div class="col-md-12 col-xs-12 col-sm-12">
             <tr>
-              <td>Homepage:</td>
-              <td><a>{{robots.titleImage}}</a></td>
+              <td>Homepage: </td>
+              <td><a>{{robots.links[1]}}</br></a></td>
             </tr>
              <tr>
-              <td>Wikipage</td>
-              <td></td>
+              <td>Wikipage: </td>
+              <td><a>{{robots.links[0]}}</br></a></td>
              </tr>
           </div>
          </div>
@@ -221,7 +247,7 @@ ul.redirect{
   
     <div class="row">
         <div class="col-md-11 col-md-offset-1">
-          <div  class="card medium">
+          <div  class="card">
             <div class="row clearfix">
 
               <div class="col-md-12">
@@ -239,7 +265,7 @@ ul.redirect{
                      
                                   
                  </div>
-                    <table class="table">
+                   <!-- <table class="table">
              <tr>
                 <td>Lorem ipsum dolor</td>
              </tr>
@@ -249,7 +275,8 @@ ul.redirect{
              <tr>
                 <td>Lorem ipsum dolor</td>
              </tr>
-          </table>
+          </table>-->
+         <div class="text-center" ng-repeat="robots in robo"> {{robots.Description}}</div>
               </div>
           
           </div>
@@ -261,7 +288,7 @@ ul.redirect{
 
     <div class="row">
         <div class=" col-md-11 col-md-offset-1">
-          <div  class="imagesclass card medium">
+          <div  class="imagesclass card">
             <div class="row clearfix">
 
               <div class="col-md-6 col-sm-4 col-xs-4">
@@ -277,7 +304,7 @@ ul.redirect{
         </div><!--images section complete-->
         <!--videos  section-->
         <div class=" col-md-11 col-md-offset-1">
-          <div  class="imagesclass card medium">
+          <div  class="imagesclass card ">
             <div class="row clearfix">
 
               <div class="col-md-6 col-sm-4 col-xs-4">

@@ -1,8 +1,8 @@
-[{
+{
 			"_id": "561cf518cb8ba1268913141f",
 			"country": "Japan",
 			"job": [
-					 "RESCUE","EXPLORATION","RESEARCH"
+					 "RESCUE","EXPLORATION","RESEARCH",
 					],
 			"locomotion": {},
 			"name": "ASIMO",
@@ -18,4 +18,4 @@
 			"size": "130 cm tall",
 			"startYear": 2000,
 			"videolinks": ["https://www.youtube.com/watch?v=FShZddlsjkA","https://www.youtube.com/watch?v=eU93VmFyZbg", "https://www.youtube.com/watch?v=xt090WrKU3w"]
-}]
+},
