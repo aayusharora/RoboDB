@@ -84,6 +84,10 @@
     #border{
       border-color: #3F51B5;
     }
+    img.thumbnail.responsive-img{
+      display:block;
+      margin:0 auto;
+    }
     </style>
 
 
@@ -95,7 +99,7 @@
       <div class="row">
         <div class="col-md-12">
           <ul class="redirect">
-            <li><a href="#/datarobo">Eskimo/</a></li>&nbsp;&nbsp;&nbsp;&nbsp;
+            <li><a href="#/datarobo">ASIMO/</a></li>&nbsp;&nbsp;&nbsp;&nbsp;
             <li><a href="#/123RF">123RF/</a></li>
             
            
@@ -196,11 +200,11 @@
                                </div>
                             
                               <div class="col-md-7 col-sm-12 col-xs-12">
-                              <ul ng-repeat ="robots in robo">
-                              <li>{{robots.technology[0]}}</li>
-                              <li>{{robots.technology[1]}}</li>
-                              <li>{{robots.technology[2]}}</li>
-                              <li>{{robots.technology[3]}}</li>
+                              <ul>
+                              <li>{{robots.technology[0]}} </br></li>
+                              <li>{{robots.technology[1]}} </br></li>
+                              <li>{{robots.technology[2]}} </br></li>
+                              <li>{{robots.technology[3]}} </br></li>
                                            <!---Not working-->
                             </ul>
                           </div>
@@ -275,7 +279,7 @@
                       <div class=" row">
                         <table class="border-bottom table">
                           <tr>
-                            <td >Description</td>
+                            <td ><h5>Description</h5></td>
                             <td class="border-left">....</td>
                             <td class="border-left">....</td>
                           </tr>
@@ -308,14 +312,19 @@
 
         <div class="row">
             <div class=" col-md-11 col-md-offset-1">
-              <div  class="imagesclass z-depth-3 card">
+              <div  class=" z-depth-3 card">
                 <div class="row clearfix">
 
-                  <div class="col-md-6 col-sm-4 col-xs-4">
-                    <div class="card-image"><!--card image-->
-                      <h6>Images</h6>
                   
-                     </div>
+                    <!--card image-->
+                      <div class="col-md-12 col-xs-12 col-sm-12"><h5>Images</h5></div>
+                    </div>
+                       <div ng-repeat="robots in robo" class="center  row">
+                        <div class="col-md-4 col-sm-12 col-xs-12"><img  class=" thumbnail responsive-img" ng-src="{{robots.galleryImageLinks[0]}}"/></div>
+                        <div class="col-md-4 col-sm-12 col-xs-12"><img class="thumbnail responsive-img" ng-src="{{robots.galleryImageLinks[1]}}"/></div>
+                        
+                      
+                    
                   </div>
                   
               </div>
@@ -327,7 +336,8 @@
               <div  class="imagesclass z-depth-3 card ">
                 <h6>Videos</h6>
                 <div class="row clearfix">
-                  
+                   
+        
                   
                   
                   

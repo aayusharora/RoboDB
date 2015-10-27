@@ -17,5 +17,6 @@
 			"robotId": "561cf518cb8ba1268913141f",
 			"size": "130 cm tall",
 			"startYear": 2000,
-			"videolinks": ["https://www.youtube.com/watch?v=FShZddlsjkA","https://www.youtube.com/watch?v=eU93VmFyZbg", "https://www.youtube.com/watch?v=xt090WrKU3w"]
+			"videolinks": ["https://www.youtube.com/watch?v=FShZddlsjkA","https://www.youtube.com/watch?v=eU93VmFyZbg", "https://www.youtube.com/watch?v=xt090WrKU3w"],
+             "galleryImageLinks": ["https://upload.wikimedia.org/wikipedia/commons/3/39/ASIMO_4.28.11.jpg","http://robosavvy.com/Builders/limor/savvybot/ASIMO.jpg"]
 }]
