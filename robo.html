@@ -1,338 +1,355 @@
 
 
-<style>
-li{
-  display: inline;
-}
-.border{
- border-left:  solid 3px  #3F51B5;
-}
+    <style>
+    body{
+      font-family: 'Raleway', sans-serif;
+    }
+    li{
+      display: inline;
+    }
+    .border{
+     border-left:  solid 3px  #3F51B5;
+    }
 
-.title1{
-  margin:5%;
-}
-.border1{
- background-color: #3F51B5;
- height:1px;
-}
-.card.medium{
-  width:600px;
-}
-#contain{
-  border-right:solid 2px #3F51B5;
-}
-.recommanded{
- 
-padding:5%;
+    .title1{
+      margin:5%;
+    }
+    .border1{
+     background-color: #3F51B5;
+     height:1px;
+    }
+    .card.medium{
+      width:600px;
+    }
+    #contain{
+      border-right:solid 2px #3F51B5;
+    }
+    .recommanded{
+     
+    padding:5%;
+    margin-right: 2%;
 
-}
-.recommanded.img{
-  margin-right: auto;
-margin-left: auto;
-}
-.center{
-  margin-left:28%;
-}
-img.responsive-img{
-max-width: 70%;
-min-width:50%;
-}
+    }
+    .card .card-image{
+      padding: 6%;
+    }
+    .recommanded.img{
+      margin-right: auto;
+    margin-left: auto;
+    }
+    .center{
+      margin-left:28%;
+    }
+    img.responsive-img{
+    max-width: 70%;
+    min-width:50%;
+    }
 
-table td{
-  border-top: none !important;
-}
-.border-left{
-  border-left:  solid 2px #3F51B5;
-}
-.border-bottom{
-  border-bottom:solid 2px #3F51B5;;
-}
-.card.large .card-content {
-    height: 70px;
-}
-.imagesclass.card.medium{
-  height:200px;
-}
-#border1{
- background-color: #3F51B5;
- height:2px;
-}
-ul.redirect{
-  font-size: 18px;
-}
-.bold{
-  font-weight:bolder;
-  margin-bottom: 2%;
-}
-.boldless{
-  font-weight:bolder;
-}
-.main{
-  margin-left: 15%;
-  margin-top: 2%;
-}
-</style>
+    table td{
+      border-top: none !important;
+    }
+    .border-left{
+      border-left:  solid 2px #3F51B5;
+    }
+    .border-bottom{
+      border-bottom:solid 2px #3F51B5;;
+    }
+    .card.large .card-content {
+        height: 70px;
+    }
+    .imagesclass.card.medium{
+      height:200px;
+    }
+    #border1{
+     background-color: #3F51B5;
+     height:2px;
+    }
+    ul.redirect{
+      font-size: 18px;
+    }
+    .bold{
+      font-weight:bolder;
+      margin-bottom: 2%;
+    }
+    .boldless{
+      font-weight:bolder;
+    }
+    .main{
+      margin-left: 15%;
+      margin-top: 2%;
+    }
+    .cursor{
+      cursor:pointer;
+    }
+    #border{
+      border-color: #3F51B5;
+    }
+    </style>
 
 
-  <div class="container">
-	<div class="header">
-	</div>
-<div class="row">
-	<div class="text-center col-md-12 "><h3>RoboDB</h3></div>
-  <div class="row">
-    <div class="col-md-12">
-      <ul class="redirect">
-        <li><a href="#/datarobo">Eskimo/</a></li>&nbsp;&nbsp;&nbsp;&nbsp;
-        <li><a href="#/123RF">123RF/</a></li>
-        
-       
-      </ul>
-    </div>
-  </div>
-</div>
-   <div class="row">
-   	 
-   	 	<div class="col-md-10 col-md-offset-2 darken-4">
-   	 		 <nav class="indigo">
+      <div class="container">
+    	<div class="header">
+    	</div>
+    <div class="row">
+    	<div class="text-center col-md-12 "><h3>RoboDB</h3></div>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="redirect">
+            <li><a href="#/datarobo">Eskimo/</a></li>&nbsp;&nbsp;&nbsp;&nbsp;
+            <li><a href="#/123RF">123RF/</a></li>
             
-    <div class="nav-wrapper">
-       <nav class="indigo">
-
-    <div class="nav-wrapper">
-
-      <form>
-        
-        <div class="text-center input-field">
-          <input id="search" type="search" required ng-model="text">
-          <label for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
+           
+          </ul>
         </div>
-      </form>
+      </div>
     </div>
-  </nav>
-    </div>
-  </nav>
+       <div class="row">
+       	 
+       	 	<div class="col-md-10 col-md-offset-2 darken-4">
+       	 		 <nav class="indigo">
+                
+        <div class="nav-wrapper">
+           <nav class="indigo">
 
-   	 			
-   	 	
-   	    </div>
-   </div><br><br>
-   <hr id="border1">
-  
-  <div class="main" >
-<div class="row">
-<div class="card recommanded col-md-3"><!--vertical divison-->
-  <div class="row">
-     <div class="text-center title1 col-md-12">
-     <h6>Recommended</h6>
-     <hr class="border1">
-  
-     </div>
-  </div>
-  <div class="row">
-     <div class=" center col-md-12 col-xs-5 col-sm-4"  ng-repeat="robots in robo">
-     	<img class="  responsive-img" ng-src="{{robots.titleImage}}"/>
-     </div>
-  </div>
-  <div class="row">
-     <div class=" center col-md-12 col-xs-5 col-sm-4">
-     	<img class="img-responsive" src="images/123RF.jpg"/>
-     </div>
-  </div>
-  <!--latest section-->
-<div class="row">
-     <div class="text-center title1 col-md-12">
-     <h6>Latest Robots</h6>
-     <hr class="border1">
-  
-     </div>
-</div>
-<div class="row">
-     <div class=" center col-md-12 col-xs-5 col-sm-4" >
-      <img class="responsive-img" src="images/quickscat.jpg"/>
-     </div>
-  </div>
+        <div class="nav-wrapper">
 
-</div>
+          <form>
+            
+            <div class="text-center input-field">
+              <input id="search" type="search" required ng-model="text">
+              <label for="search"><i class="material-icons">search</i></label>
+              
+            </div>
+          </form>
+        </div>
+      </nav>
+        </div>
+      </nav>
 
-<div class="border col-md-9"><!--card portion-->
-  <div class="row">
-  
+       	 			
+       	 	
+       	    </div>
+       </div><br><br>
+       <hr id="border1">
+      
+      <div class="main" >
     <div class="row">
-        <div class="col-md-11 col-md-offset-1 col-sm-12 col-xs-12">
-          <div  class="card">
-            <div class="row clearfix">
-
-              <div ng-repeat="robots in robo" class="col-md-6 col-sm-12 col-xs-12">
-                <div class="card-image"><!--card image-->
-                  <img class="main thumbnail responsive-img" ng-src="{{robots.titleImage}}"/>
-              
-                 </div>
-              </div>
-              <div ng-repeat="robots in robo" style="padding-top:2%" class= "col-md-6 col-sm-12 col-xs-12">
-              
-              <div style="font-size:20px" class="bold text-center">
-               
-               {{robots.name}}<br>
-               </div>
-               <table class="table">
-                  <tbody>
-                       <tr>
-                         <td class="boldless">Technology</td>
-                         <td>
-                          <ul ng-repeat ="robots in robo">
-                          <li>{{robots.technology[0]}}</li>
-                          <li>{{robots.technology[1]}}</li>
-                          <li>{{robots.technology[2]}}</li>
-                          <li>{{robots.technology[3]}}</li>
-                                        <!---Not working-->
-                        </ul>
-                        </td>
-                         
-                       </tr>
-                       <tr>
-                        <td class="boldless">Job
-                        </td>
-                        <td>
-                          <ul><!--not the right way-->
-                                 <li>{{robots.job[0]}} </br></li>                   
-                                 <li>{{robots.job[1]}}</br></li> 
-                                 <li>{{robots.job[2]}}</br></li> 
-                                 
-                            </ul>
-                        </td>
-                        </tr>
-                       <tr>
-                        <td class="boldless">Locomotion
-                        </td>
-                        <td>{{robots.locomotion}}
-                        </td>
-                        </tr>
-                        <tr>
-                          <td class="boldless">Country</td>
-                         <td>{{robots.country}}
-                        </td>
-                       </tr>
-                  </tbody>
-               </table>
-               <!-- <td>Locomotion</td>
-                         <td>Job</td>
-                         <td>Country</td>-->
-              </div>
-          </div>
-         <div  ng-repeat="robots in robo"class="row">
-          <hr id="border">
-          <div class="col-md-12 col-xs-12 col-sm-12">
-            <tr>
-              <td>Homepage: </td>
-              <td><a>{{robots.links[1]}}</br></a></td>
-            </tr>
-             <tr>
-              <td>Wikipage: </td>
-              <td><a>{{robots.links[0]}}</br></a></td>
-             </tr>
-          </div>
+    <div class="z-depth-3 card recommanded col-md-3"><!--vertical divison-->
+      <div class="row">
+         <div class="text-center title1 col-md-12">
+         <h6>Recommended</h6>
+         <hr class="border1">
+      
          </div>
-          </div>
-        </div>
       </div>
-   <div class="row clearfix">
-   
-
-   </div>         
-
-</div>
-
-   <div class="row"><!--description section-->
-  
-    <div class="row">
-        <div class="col-md-11 col-md-offset-1">
-          <div  class="card">
-            <div class="row clearfix">
-
-              <div class="col-md-12">
-                <div class="card-content"><!--card image-->
-                  <div class=" row">
-                    <table class="border-bottom table">
-                      <tr>
-                        <td >Description</td>
-                        <td class="border-left">....</td>
-                        <td class="border-left">....</td>
-                      </tr>
-                     
-                    </table>
-                  </div>
-                     
-                                  
-                 </div>
-                   <!-- <table class="table">
-             <tr>
-                <td>Lorem ipsum dolor</td>
-             </tr>
-             <tr>
-                <td>Lorem ipsum dolor</td>
-             </tr>
-             <tr>
-                <td>Lorem ipsum dolor</td>
-             </tr>
-          </table>-->
-         <div class="text-center" ng-repeat="robots in robo"> {{robots.Description}}</div>
-              </div>
-          
-          </div>
-          
-          </div>
-        </div>
+      <div class="row">
+         <div class=" center col-md-12 col-xs-5 col-sm-4"  ng-repeat="robots in robo">
+         	<img class="  responsive-img" ng-src="{{robots.titleImage}}"/>
+         </div>
       </div>
-         <!--images section-->
-
+      <div class="row">
+         <div class=" center col-md-12 col-xs-5 col-sm-4">
+         	<img class="img-responsive" src="images/123RF.jpg"/>
+         </div>
+      </div>
+      <!--latest section-->
     <div class="row">
-        <div class=" col-md-11 col-md-offset-1">
-          <div  class="imagesclass card">
-            <div class="row clearfix">
+         <div class="text-center title1 col-md-12">
+         <h6>Latest Robots</h6>
+         <hr class="border1">
+      
+         </div>
+    </div>
+    <div class="row">
+         <div class=" center col-md-12 col-xs-5 col-sm-4" >
+          <img class="responsive-img" src="images/quickscat.jpg"/>
+         </div>
+      </div>
 
-              <div class="col-md-6 col-sm-4 col-xs-4">
-                <div class="card-image"><!--card image-->
-                  <h6>Images</h6>
-              
-                 </div>
-              </div>
-              
-          </div>
-         
-          </div>
-        </div><!--images section complete-->
-        <!--videos  section-->
-        <div class=" col-md-11 col-md-offset-1">
-          <div  class="imagesclass card ">
-            <div class="row clearfix">
+    </div>
 
-              <div class="col-md-6 col-sm-4 col-xs-4">
-                <div class="card-image"><!--card image-->
+    <div class="border col-md-8"><!--card portion-->
+      <div class="row">
+      
+        <div class="row">
+            <div class="col-md-11 col-md-offset-1 col-sm-12 col-xs-12">
+              <div  class="z-depth-3 card">
+                <div class="row clearfix">
+
+                  <div ng-repeat="robots in robo" class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="card-image"><!--card image-->
+                      <img class="main thumbnail responsive-img" ng-src="{{robots.titleImage}}"/>
                   
-                 <h6>Videos</h6>
-                 </div>
+                     </div>
+                  </div>
+                  <div ng-repeat="robots in robo" style="padding-top:2%" class= "col-md-6 col-sm-12 col-xs-12">
+                  
+                  <div style="font-size:20px" class="bold text-center">
+                   
+                   {{robots.name}}<br>
+                   </div>
+                   
+                           
+                            <div class="row">
+                              <div class="boldless col-md-5 col-sm-12 col-xs-12">
+                             Technology
+                               </div>
+                            
+                              <div class="col-md-7 col-sm-12 col-xs-12">
+                              <ul ng-repeat ="robots in robo">
+                              <li>{{robots.technology[0]}}</li>
+                              <li>{{robots.technology[1]}}</li>
+                              <li>{{robots.technology[2]}}</li>
+                              <li>{{robots.technology[3]}}</li>
+                                           <!---Not working-->
+                            </ul>
+                          </div>
+                            
+                             </div>
+                            <div class="row">
+                            <div class="col-md-5 col-sm-12 col-xs-12 boldless">Job</div>
+                            <div class="col-md-7 col-sm-12 col-xs-12">
+                              <ul><!--not the right way-->
+                                     <li>{{robots.job[0]}} </br></li>                   
+                                     <li>{{robots.job[1]}}</br></li> 
+                                     <li>{{robots.job[2]}}</br></li> 
+                                     
+                                </ul>
+                            </div>
+                          </div>
+                            <div class="row">
+                            <div class="col-md-5 col-sm-12 col-xs-12 boldless">Locomotion
+                            </div>
+                              <div class="col-md-7 col-sm-12 col-xs-12">
+                                <ul>
+                              <li>{{robots.locomotion}}<li>
+                              </ul>
+                               </div>
+                             </div>
+                            
+                            <div class="row">
+                              <div class="col-md-5 col-sm-12 col-xs-12 boldless">Country</div>
+                            <div class="col-md-7 col-sm-12 col-xs-12"><li>{{robots.country}}</li></div>
+                            
+                     
+                             </div>
+                   <!-- <td>Locomotion</td>
+                             <td>Job</td>
+                             <td>Country</td>-->
+                  </div>
+              </div>
+             <div  ng-repeat="robots in robo"class="row">
+              <hr id="border">
+              <div class="col-md-12 col-xs-12 col-sm-12">
+               <div class="row">
+                  <div class="col-md-4 col-sm-12 col-xs-12 boldless">Homepage: </div>
+                  <div class="cursor col-md-8 col-sm-12 col-xs-12"><a href="{{robots.links[1]}}">{{robots.links[1]}}</a></div>
+
+               </div>
+                 <div class="row">
+                  <div class="col-md-4 col-sm-12 col-xs-12 boldless">Wikipage: </div>
+                  <div class="cursor col-md-8 col-sm-12 col-xs-12"><a href="{{robots.links[0]}}">{{robots.links[0]}}</a></div>
+
+               </div>
+              </div>
+             </div>
+              </div>
+            </div>
+          </div>
+       <div class="row clearfix">
+       
+
+       </div>         
+
+    </div>
+
+       <div class="row"><!--description section-->
+      
+        <div class="row">
+            <div class="col-md-11 col-md-offset-1">
+              <div  class="z-depth-3 card">
+                <div class="row clearfix">
+
+                  <div class="col-md-12">
+                    <div class="card-content"><!--card image-->
+                      <div class=" row">
+                        <table class="border-bottom table">
+                          <tr>
+                            <td >Description</td>
+                            <td class="border-left">....</td>
+                            <td class="border-left">....</td>
+                          </tr>
+                         
+                        </table>
+                      </div>
+                         
+                                      
+                     </div>
+                       <!-- <table class="table">
+                 <tr>
+                    <td>Lorem ipsum dolor</td>
+                 </tr>
+                 <tr>
+                    <td>Lorem ipsum dolor</td>
+                 </tr>
+                 <tr>
+                    <td>Lorem ipsum dolor</td>
+                 </tr>
+              </table>-->
+             <div class="text-center" ng-repeat="robots in robo"> {{robots.Description}}</div>
+                  </div>
+              
               </div>
               
+              </div>
+            </div>
           </div>
-         
-          </div>
-        </div>
-     <!--row end-->       
+             <!--images section-->
 
-</div>
+        <div class="row">
+            <div class=" col-md-11 col-md-offset-1">
+              <div  class="imagesclass z-depth-3 card">
+                <div class="row clearfix">
 
-	</div>
+                  <div class="col-md-6 col-sm-4 col-xs-4">
+                    <div class="card-image"><!--card image-->
+                      <h6>Images</h6>
+                  
+                     </div>
+                  </div>
+                  
+              </div>
+             
+              </div>
+            </div><!--images section complete-->
+            <!--videos  section-->
+            <div class=" col-md-11 col-md-offset-1">
+              <div  class="imagesclass z-depth-3 card ">
+                <h6>Videos</h6>
+                <div class="row clearfix">
+                  
+                  
+                  
+                  
+              </div>
+             
+              </div>
+            </div>
+         <!--row end-->       
+
+    </div>
+
+    	</div>
 
 
-</div>
+    </div>
 
-  </div>
-  <div class="row clearfix">
-    <div class="text-center"><h5>Related Robots</h5></div>
-   <hr id="border1">
-   <div class="col-md-12">
+      </div>
+      <div class="row clearfix">
+        <div class="text-center"><h5>Related Robots</h5></div>
+       <hr id="border1">
+       <div class="col-md-12">
 
-   </div>
-   </div>
-</div>
+       </div>
+       </div>
+    </div>
