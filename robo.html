@@ -39,16 +39,12 @@ font-family: 'Roboto', sans-serif;
       margin-right: auto;
     margin-left: auto;
     }
-    .center{
-      margin-left:28%;
-    }
+   
     img.responsive-img{
     max-width: 70%;
     min-width:50%;
     }
-    .heading{
-      word-wrap:break-word;
-    }
+    
 
     table td{
       border-top: none !important;
@@ -107,7 +103,7 @@ font-family: 'Roboto', sans-serif;
     </style>
 
 
-      <div class="container">
+      <div class="container-fluid"  ng-cloak>
     	<div class="header">
     	</div>
     <div class="row">
@@ -387,8 +383,8 @@ font-family: 'Roboto', sans-serif;
                       <div class="col-md-12 col-xs-12 col-sm-12"><h5>Images</h5></div>
                     </div>
                        <div ng-repeat="robots in robo" class="center  row">
-                        <div class="col-md-4 col-sm-12 col-xs-12"><img  class=" thumbnail responsive-img" ng-src="{{robots.galleryImageLinks[0]}}"/></div>
-                        <div class="col-md-4 col-sm-12 col-xs-12"><img class="thumbnail responsive-img" ng-src="{{robots.galleryImageLinks[1]}}"/></div>
+                        <div class="col-md-6 col-sm-12 col-xs-12"><img  class=" thumbnail responsive-img" ng-src="{{robots.galleryImageLinks[0]}}"/></div>
+                        <div class="col-md-6 col-sm-12 col-xs-12"><img class="thumbnail responsive-img" ng-src="{{robots.galleryImageLinks[1]}}"/></div>
                         
                       
                     
