@@ -2,7 +2,8 @@
 
     <style>
     body{
-      font-family: 'Raleway', sans-serif;
+font-family: 'Roboto', sans-serif;
+
     }
     li{
       display: inline;
@@ -24,12 +25,13 @@
     #contain{
       border-right:solid 2px #3F51B5;
     }
-    .recommanded{
-     
-    padding:5%;
-    margin-right: 2%;
+ .recommanded {
+    padding: 5%;
+    overflow-y: auto;
 
-    }
+    margin-right: 2%;
+    height: 480px;
+}
     .card .card-image{
       padding: 6%;
     }
@@ -43,6 +45,9 @@
     img.responsive-img{
     max-width: 70%;
     min-width:50%;
+    }
+    .heading{
+      word-wrap:break-word;
     }
 
     table td{
@@ -75,7 +80,7 @@
       font-weight:bolder;
     }
     .main{
-      margin-left: 15%;
+      margin-left: 1%;
       margin-top: 2%;
     }
     .cursor{
@@ -87,7 +92,18 @@
     img.thumbnail.responsive-img{
       display:block;
       margin:0 auto;
+      max-width: 150px;
     }
+    img.image.responsive-img{
+      display: block;
+      margin:0 auto;
+      max-width: 150px;
+    }
+    .z-depth-3.card{
+      padding:5%;
+    }
+
+   
     </style>
 
 
@@ -96,20 +112,20 @@
     	</div>
     <div class="row">
     	<div class="text-center col-md-12 "><h3>RoboDB</h3></div>
-      <div class="row">
-        <div class="col-md-12">
+      
+        
           <ul class="redirect">
             <li><a href="#/datarobo">ASIMO/</a></li>&nbsp;&nbsp;&nbsp;&nbsp;
             <li><a href="#/123RF">123RF/</a></li>
             
            
           </ul>
-        </div>
-      </div>
+        
+     
     </div>
        <div class="row">
-       	 
-       	 	<div class="col-md-10 col-md-offset-2 darken-4">
+       	 <div class="col-md-2"></div>
+       	 	<div class="col-md-8 darken-4">
        	 		 <nav class="indigo">
                 
         <div class="nav-wrapper">
@@ -133,7 +149,8 @@
        	 			
        	 	
        	    </div>
-       </div><br><br>
+            <div class="col-md-2"></div>
+       </div>
        <hr id="border1">
       
       <div class="main" >
@@ -141,32 +158,42 @@
     <div class="z-depth-3 card recommanded col-md-3"><!--vertical divison-->
       <div class="row">
          <div class="text-center title1 col-md-12">
-         <h6>Recommended</h6>
+         <h6><b>RECOMMENDED</b></h6>
          <hr class="border1">
       
          </div>
       </div>
       <div class="row">
-         <div class=" center col-md-12 col-xs-5 col-sm-4"  ng-repeat="robots in robo">
-         	<img class="  responsive-img" ng-src="{{robots.titleImage}}"/>
+         <div class="col-md-12 col-xs-12 col-sm-12"  ng-repeat="robots in robo">
+         	<img class="image responsive-img" ng-src="{{robots.titleImage}}"/>
          </div>
       </div>
       <div class="row">
-         <div class=" center col-md-12 col-xs-5 col-sm-4">
-         	<img class="img-responsive" src="images/123RF.jpg"/>
+         <div class="col-md-12 col-xs-12 col-sm-12"  ng-repeat="robots in robo">
+          <div class="text-center"><h6>{{robots.name}}</h6></div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12 col-xs-12 col-sm-12">
+         	<img class="image responsive-img" src="images/123RF.jpg"/>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12 col-xs-12 col-sm-12"  ng-repeat="robots in robo">
+          <div class="text-center"><h6>{{robots.name}}</h6></div>
          </div>
       </div>
       <!--latest section-->
     <div class="row">
          <div class="text-center title1 col-md-12">
-         <h6>Latest Robots</h6>
+         <h6><b>Latest Robots</b></h6>
          <hr class="border1">
       
          </div>
     </div>
     <div class="row">
-         <div class=" center col-md-12 col-xs-5 col-sm-4" >
-          <img class="responsive-img" src="images/quickscat.jpg"/>
+         <div class="col-md-12 col-xs-12 col-sm-12" >
+          <img class="image responsive-img" src="images/quickscat.jpg"/>
          </div>
       </div>
 
@@ -176,7 +203,7 @@
       <div class="row">
       
         <div class="row">
-            <div class="col-md-11 col-md-offset-1 col-sm-12 col-xs-12">
+            <div class="col-md-12 col-md-offset-1 col-sm-12 col-xs-12">
               <div  class="z-depth-3 card">
                 <div class="row clearfix">
 
@@ -190,37 +217,9 @@
                   
                   <div style="font-size:20px" class="bold text-center">
                    
-                   {{robots.name}}<br>
+                   {{robots.name}}<br><hr class="border1">
+
                    </div>
-                   
-                           
-                            <div class="row">
-                              <div class="boldless col-md-5 col-sm-12 col-xs-12">
-                             Technology
-                               </div>
-                            
-                              <div class="col-md-7 col-sm-12 col-xs-12">
-                              <ul>
-                              <li>{{robots.technology[0]}} </br></li>
-                              <li>{{robots.technology[1]}} </br></li>
-                              <li>{{robots.technology[2]}} </br></li>
-                              <li>{{robots.technology[3]}} </br></li>
-                                           <!---Not working-->
-                            </ul>
-                          </div>
-                            
-                             </div>
-                            <div class="row">
-                            <div class="col-md-5 col-sm-12 col-xs-12 boldless">Job</div>
-                            <div class="col-md-7 col-sm-12 col-xs-12">
-                              <ul><!--not the right way-->
-                                     <li>{{robots.job[0]}} </br></li>                   
-                                     <li>{{robots.job[1]}}</br></li> 
-                                     <li>{{robots.job[2]}}</br></li> 
-                                     
-                                </ul>
-                            </div>
-                          </div>
                             <div class="row">
                             <div class="col-md-5 col-sm-12 col-xs-12 boldless">Locomotion
                             </div>
@@ -230,10 +229,78 @@
                               </ul>
                                </div>
                              </div>
+                           
+                            <div class="row">
+                            <div class="col-md-5 col-sm-12 col-xs-12 boldless">Job</div>
+                            <div class="col-md-7 col-sm-12 col-xs-12">
+                              <ul><!--not the right way-->
+                                     <li>{{robots.job[0]}} ,</li>                   
+                                     <li>{{robots.job[1]}} ,</li> 
+                                     <li>{{robots.job[2]}}</li> 
+                                     
+                                </ul>
+                            </div>
+                          </div>
+
+                            <div class="row">
+                              <div class="boldless col-md-5 col-sm-12 col-xs-12">
+                             Technology
+                               </div>
+                            
+                              <div class="col-md-7 col-sm-12 col-xs-12">
+                              <ul>
+                              <li>{{robots.technology[0]}} ,</li>
+                              <li>{{robots.technology[1]}} ,</li>
+                              <li>{{robots.technology[2]}} ,</li>
+                              <li>{{robots.technology[3]}} </li>
+                                           <!---Not working-->
+                            </ul>
+                          </div>
+                            
+                             </div>
+                           
+                            
                             
                             <div class="row">
                               <div class="col-md-5 col-sm-12 col-xs-12 boldless">Country</div>
                             <div class="col-md-7 col-sm-12 col-xs-12"><li>{{robots.country}}</li></div>
+                            
+                     
+                             </div>
+                             <div class="row">
+                              <div class="col-md-5 col-sm-12 col-xs-12 boldless">Dimension</div>
+                            <div class="col-md-7 col-sm-12 col-xs-12"><li>{{robots.dimension}}</li></div>
+                            
+                     
+                             </div>
+                             <div class="row">
+                              <div class="col-md-5 col-sm-12 col-xs-12 boldless">Company/</br>Institute</div>
+                            <div class="col-md-7 col-sm-12 col-xs-12"><li>{{robots.company[0]}}</li></div>
+                            
+                     
+                             </div>
+                             <div class="row">
+                              <div class="col-md-5 col-sm-12 col-xs-12 boldless">Version</div>
+                            <div class="col-md-7 col-sm-12 col-xs-12"><li>{{robots.version}}</li></div>
+                            
+                     
+                             </div>
+                             <div class="row">
+                              <div class="col-md-5 col-sm-12 col-xs-12 boldless">Person Associated</div>
+                            <div class="col-md-7 col-sm-12 col-xs-12"><li>{{robots.version}}</li></div>
+                            
+                     
+                             </div>
+                             
+                             <div class="row">
+                              <div class="col-md-5 col-sm-12 col-xs-12 boldless">Weight</div>
+                            <div class="col-md-7 col-sm-12 col-xs-12"><li>{{robots.version}}</li></div>
+                            
+                     
+                             </div>
+                             <div class="row">
+                              <div class="col-md-5 col-sm-12 col-xs-12 boldless">Start year</div>
+                            <div class="col-md-7 col-sm-12 col-xs-12"><li>{{robots.version}}</li></div>
                             
                      
                              </div>
@@ -270,21 +337,21 @@
        <div class="row"><!--description section-->
       
         <div class="row">
-            <div class="col-md-11 col-md-offset-1">
+            <div class="col-md-12 col-md-offset-1">
               <div  class="z-depth-3 card">
                 <div class="row clearfix">
 
                   <div class="col-md-12">
                     <div class="card-content"><!--card image-->
                       <div class=" row">
-                        <table class="border-bottom table">
-                          <tr>
-                            <td ><h5>Description</h5></td>
-                            <td class="border-left">....</td>
-                            <td class="border-left">....</td>
-                          </tr>
+                        <div class="col-md-12 col-xs-12 col-sm-12 border-bottom table">
+                          
+                            <div class="col-md-4 col-xs-12 col-sm-12 border-left"><h5 class="heading">Description</h5></div>
+                            <div class="col-md-4 col-xs-12 col-sm-12 border-left"><h5 class="heading">DUMMY</h5></div>
+                            <div class="col-md-4 col-xs-12 col-sm-12 border-left"><h5 class="heading">DUMMY</h5></div>
                          
-                        </table>
+                         
+                        </div>
                       </div>
                          
                                       
@@ -311,7 +378,7 @@
              <!--images section-->
 
         <div class="row">
-            <div class=" col-md-11 col-md-offset-1">
+            <div class=" col-md-12 col-md-offset-1">
               <div  class=" z-depth-3 card">
                 <div class="row clearfix">
 
@@ -332,7 +399,7 @@
               </div>
             </div><!--images section complete-->
             <!--videos  section-->
-            <div class=" col-md-11 col-md-offset-1">
+            <div class=" col-md-12 col-md-offset-1">
               <div  class="imagesclass z-depth-3 card ">
                 <h6>Videos</h6>
                 <div class="row clearfix">
