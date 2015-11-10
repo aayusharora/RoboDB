@@ -1,0 +1,201 @@
+  <html ng-app='myController'>
+  <style>
+
+
+  </style>
+  <head>
+  	<link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+  	<link rel="stylesheet" type="text/css" href="CSS/materialize.css">
+  	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<script type="text/javascript" src="JS/angular.min.js"></script>
+  	<script type="text/javascript" src="JS/app.js"></script>
+  	<script type="text/javascript" src="JS/filtercontroller.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-animate.min.js"></script>
+       <script type="text/javascript" src="JS/jquery.min.js"></script>
+      <script type="text/javascript" src="JS/materialize.min.js"></script>
+      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  	<title>Filter</title>
+
+  </head>
+  <style>
+ body{
+font-family: 'Roboto', sans-serif;
+
+    }
+    li.ng-binding{
+      color:black;
+    }
+     li.ng-binding:hover{
+      color:#3D4EB0;
+
+    }
+    [type="checkbox"]:checked + label:before {
+    border-right: 2px solid #3D4EB0;
+    border-bottom: 2px solid #3D4EB0;
+
+    }
+  .animate-enter {
+  -webkit-transition: 1s linear all; /* Chrome */
+    transition: 8s linear all;
+    opacity: 0;
+  }
+  .animate-enter.animate-enter-active {
+    opacity: 1;
+  }
+  img.filter-images.img-responsive{
+    margin:12%;
+  }
+  .card.filter{
+    overflow-y:hidden;
+    height:540px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    background-color: #fff;
+  }
+.card1{
+  margin-left:1%;
+
+}
+.row{
+  padding:0.5%;
+}
+.border{
+     border-bottom:  solid 3px  #3F51B5;
+     margin-bottom:4%;
+    }
+   
+
+  </style>
+  <body  ng-controller="AvengersCtrl">
+  <div class="container-fluid">
+  <div class="main">
+  	<div class="header"></div>
+  	<div class="row">
+       <div class="text-center col-md-12"><h3>ROBODB</h3></div>
+  	</div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+      <nav class="indigo">
+    <div class="nav-wrapper">
+      <div class="text-center input-field">
+              <input id="search" type="search" required ng-model="text">
+              <label for="search"><i class="material-icons">search</i></label>
+              
+            </div>
+    </div>
+  </nav>
+</div>
+</div>
+<hr class="border">
+  <div class="row">
+
+  <div class=" z-depth-3 card filter col-md-2 col-xs-12 col-sm-12">
+  <div class="text-center col-md-12 col-xs-12 col-sm-12">
+  	<h5>Filters</h5>
+
+  </div>
+   <div class="row" > 
+   	<div class="row">
+   	<div class="col-md-12 col-xs-12 col-sm-12">
+     		<div  class="text-center col-md-12 col-sm-12 col-xs-12"><h6>Technology</h6></div>
+          	
+            
+   	</div>
+      </div>
+
+
+       <div class="row">
+      <div id="teamCheckboxList" class="checkboxList">
+        <div ng-repeat="t in technology">
+         <ul class="col-md-12 col-xs-6 col-sm-6 col-md-offset-1"> <input type="checkbox" ng-model="isChecked" ng-change="filterByTechnology(t,isChecked)" id="t{{t.index}}" />
+        <label for="t{{t.index}}"><li> {{t.name}}</li>
+          </label></div>
+        </ul>
+       
+      </div>
+    </div>
+
+
+
+    <div class="row">
+    <div class="col-md-12 col-xs-12 col-sm-12">
+      <div  class="text-center col-md-12 col-sm-12 col-xs-12"><h6>Price</h6></div>
+            
+            
+    </div>
+      </div>
+
+
+       <div class="row">
+           <div id="teamCheckboxList2" class="checkboxList">
+               <ul ng-repeat="p in price">
+
+                       <div class="col-md-12 col-xs-6 col-sm-6 col-md-offset-1" >
+                       <input type="checkbox" ng-model="isChecked" ng-change="filterByPrice(p,isChecked)" id="p{{p.index}}" />
+                      
+
+                   <label for="p{{p.index}}"><li>{{p.price}}</li></label></li></div>
+               </ul>
+
+           </div>
+       </div>
+   
+       </div>
+  </div>
+  <div  class="col-md-8">
+      <div  class="col-md-1"></div>
+  <div style="border-left:solid 3px  #3F51B5"class="col-md-11 col-xs-12 col-sm-12 ">
+
+
+  <div ng-repeat="t in items"><!-- using true to get exact ma-->
+
+  <div  ng-animate="animate" class="z-depth-3 card"><!--trying ng-animate-->
+  <div class="row">
+    <div class="col-md-4">
+    <img style="margin-top:10%"class="filter-images img-thumbnail" width="200px" ,height="200px" src="images/{{t.name}}.jpeg"/>
+    </div>
+    <div class="col-md-8">
+    <div class="text-center row"><h5><b>Title</b></h5></div>
+     <div class="text-center row">
+      <div class="col-md-6">
+      <h6><b>Technology</b></h6>
+    </div>
+      <div class="col-md-6">
+      <h6>{{t.name}}</h6>
+    </div>
+
+  </div>
+  <div class="text-center row">
+      <div class="col-md-6">
+      <h6><b>Price</b></h6>
+    </div>
+      <div class="col-md-6">
+      <h6>{{t.price}}</h6>
+    </div>
+
+  </div>
+  </div>
+
+
+  </div>
+  </div>	
+
+
+  </div>
+  </div>
+</div>
+</div>
+  </body>
+  <script>
+$(document).ready(function(){
+  $(".card.filter").mouseenter(function(){
+    $(this).css("overflow-y","scroll");
+
+  })
+  $(".card.filter").mouseleave(function(){
+    $(this).css("overflow-y","hidden");
+
+  })
+})
+  </script>
+  </html>
