@@ -3,34 +3,43 @@ var app = angular.module("Controller", ["ngAnimate"]);
     app.controller("AvengersCtrl",["$scope",function($scope)
     {
   $scope.technology = [
-    { name: "ASIMO",index:0},
+    { name: "aero",index:0},
     { name: "123F",index:1},
     { name: "green1",index:2},
     { name: "Ygf",index:3},
     { name: "aero1",index:4},
     { name: "Purplet",index:5}]
-    $scope.price=[
+    $scope.job=[
 
-    { price: 1000 ,index:0 },
-        { price: 1100,index:1},
-        { price: 1200,index:2},
-    { price: 2000,index:3},
-    { price: 4000,index:4},
-    { price: 5000,index:5},
-    { price: 9000 ,index:6},
-    { price: 10000,index:7}
+    { job: 'A' ,index:0 },//index is for dynamically creating id's
+        {job: 'B',index:1},
+        {job: 'C',index:2},
+    { job: 'D',index:3},
+    { job: 'E',index:4},
+    { job: 'F',index:5},
+    { job: 'G',index:6},
+    { job: 'H',index:7}
   ];
+$scope.Locomotion=[
 
+    { Locomotion:"Walking" ,index:0 },
+        { Locomotion:"Spinning",index:1},
+        { Locomotion:"Leaning",index:2},
+   
+  ];
   $scope.association=[
-    {name:"ASIMO", price: 1000},
-      {name:"ASIMO", price: 1100},
-      {name:"ASIMO", price: 1200},
-    { name:"123F",price: 1000},
-      { name:"123F",price: 1100},
-    { name:"green1",price: 4000},
-    {name:"Ygf",price: 5000},
-    {name:"aero1",price: 9000},
-    { name:"Purplet",price: 10000}
+    {name:"aero", job: 'A',_id:"561cf518cb8ba1268913141f",Locomotion:"Walking"},
+      {name:"aero", job: 'B',_id:"561cf518cb8ba1268913141g",Locomotion:"Spinning"
+  },
+   {name:"123F", job: 'G',_id:"561cf518cb8ba1268913141g",Locomotion:"Spinning"
+  },
+      {name:"aero", job: 'C',_id:"561cf518cb8ba1268913141h",Locomotion:"Leaning"},
+    { name:"123F",job: 'E',_id:"561cf518cb8ba1268913141i",Locomotion:"Walking"},
+      { name:"123F",job: 'A',_id:"561cf518cb8ba1268913141j",Locomotion:"Spinning"},
+    { name:"green1",job: 'F',_id:"561cf518cb8ba1268913141k",Locomotion:"Spinning"},
+    {name:"Ygf",job: 'C',_id:"561cf518cb8ba1268913141l",Locomotion:"Spinning"},
+    {name:"aero1",job: 'D',_id:"561cf518cb8ba1268913141m",Locomotion:"Spinning"},
+    { name:"Purplet",job: 'H',_id:"561cf518cb8ba1268913141n",Locomotion:"Spinning"}
 
   ];
   /*
@@ -50,7 +59,8 @@ $scope.trackfunction=function(arr,$scope){
 
 */
 var filterByTechnology=[];// contains the filter constraints
-        var filterByPrice=[];
+        var filterByJob=[];
+         var filterByLocomotion=[];
         $scope.items= [];
         $scope.items= $scope.association;
     $scope.filterByTechnology=function(t,checkBoxVal)
@@ -74,26 +84,38 @@ var filterByTechnology=[];// contains the filter constraints
 
 
 
-$scope.filterByPrice=function(t,checkBoxVal)
+$scope.filterByJob=function(t,checkBoxVal)
 {
-    console.log(t.price)
+    console.log(t.job)
 
 
     console.log(checkBoxVal);
     if(checkBoxVal)//to check wheather check box is checked or not
     {
-        filterByPrice.push(t.price)
+        filterByJob.push(t.job)
     }
 
     else
     {
-        filterByPrice=_.reject(filterByPrice,function(price){return t.price==price })//_reject is used to remove
+        filterByJob=_.reject(filterByJob,function(job){return t.job==job })//_reject is used to remove
     }
-console.log(filterByPrice);
+console.log(filterByJob);
     $scope.filterContentByTechnology();
 }
 
+$scope.filterByLocomotion=function(t,checkBoxVal){
+    if(checkBoxVal){
+        filterByLocomotion.push(t.Locomotion)
+        console.log(filterByLocomotion);
 
+    }
+     else
+    {
+        filterByLocomotion=_.reject(filterByLocomotion,function(Locomotion){return t.Locomotion==Locomotion })
+           console.log(filterByLocomotion);//_reject is used to remove
+    }
+     $scope.filterContentByTechnology();
+}
 
 
 
@@ -106,6 +128,7 @@ console.log(filterByPrice);
                 _.each($scope.association, function (assoc) {// similiarly assoc is element of assocaiton
                     if (fil == assoc.name) {
                         $scope.items.push(assoc);
+                        console.log(assoc);
                     }
 
 
@@ -114,7 +137,6 @@ console.log(filterByPrice);
 
 
             })
-            console.log($scope.items)
             $scope.items= _.uniq($scope.items)//removing duplicates
             console.log(filterByTechnology.length)
             if(filterByTechnology.length==0)
@@ -122,16 +144,16 @@ console.log(filterByPrice);
                 $scope.items= $scope.association;
             }
 
-            if(filterByPrice.length!=0)// this section runs if we have checked any price
+            if(filterByJob.length!=0)// this section runs if we have checked any price
             {
 
                 var items=$scope.items;
                 $scope.items=[];
 
-                _.each(filterByPrice, function (fil) {//_each is like for loop/ filterByis array and fil is an element of filterByTechnology just like filterByTechnology[0]  filterByTechnology[1] n soo on
+                _.each(filterByJob, function (fil) {//_each is like for loop/ filterByis array and fil is an element of filterByTechnology just like filterByTechnology[0]  filterByTechnology[1] n soo on
                     console.log(fil)
                     _.each(items, function (item) {// similiarly assoc is element of assocaiton
-                        if (fil == item.price) {
+                        if (fil == item.job) {
                             console.log("glll")
                             $scope.items.push(item);
                         }
@@ -146,11 +168,40 @@ console.log(filterByPrice);
                 $scope.items= _.uniq($scope.items)//removing duplicates
 
 
-            }
+            } 
+     //Locomotion
+     if(filterByLocomotion.length!=0)// this section runs if we have checked any locomotion
+            {
+                console.log($scope.items)
+                var items=$scope.items;
+                $scope.items=[];
+                
+                _.each(filterByLocomotion, function (fil) {//_each is like for loop/ filterByis array and fil is an element of filterByTechnology just like filterByTechnology[0]  filterByTechnology[1] n soo on
+                    console.log(fil);
+                    _.each(items, function (item) {// similiarly assoc is element of assocaiton
+                        if (fil == item.Locomotion) {
+                            console.log("glll")
+                            $scope.items.push(item);
+                        }
+
+
+
+                    })
+
+
+                })
+                console.log($scope.items)
+                $scope.items= _.uniq($scope.items)//removing duplicates
+
+
+            } 
+
+              
         }
 
 
 
+            console.log($scope.items)
 
 }])
 

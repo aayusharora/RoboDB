@@ -101,7 +101,7 @@ font-family: 'Roboto', sans-serif;
 
     <div class="row">
     <div class="col-md-12 col-xs-12 col-sm-12">
-      <div  class="text-center col-md-12 col-sm-12 col-xs-12"><h6>Price</h6></div>
+      <div  class="text-center col-md-12 col-sm-12 col-xs-12"><h6>Job</h6></div>
             
             
     </div>
@@ -110,13 +110,33 @@ font-family: 'Roboto', sans-serif;
 
        <div class="row">
            <div id="teamCheckboxList2" class="checkboxList">
-               <ul ng-repeat="p in price">
+               <ul ng-repeat="p in job">
 
                        <div class="col-md-12 col-xs-6 col-sm-6 col-md-offset-1" >
-                       <input type="checkbox" ng-model="isChecked" ng-change="filterByPrice(p,isChecked)" id="p{{p.index}}" />
+                       <input type="checkbox" ng-model="isChecked" ng-change="filterByJob(p,isChecked)" id="p{{p.index}}" />
                       
 
-                   <label for="p{{p.index}}"><li>{{p.price}}</li></label></li></div>
+                   <label for="p{{p.index}}"><li>{{p.job}}</li></label></li></div>
+               </ul>
+
+           </div>
+       </div>
+        <div class="row">
+    <div class="col-md-12 col-xs-12 col-sm-12">
+      <div  class="text-center col-md-12 col-sm-12 col-xs-12"><h6>Locomotion</h6></div>
+            
+            
+    </div>
+      </div>
+       <div class="row">
+           <div id="teamCheckboxList2" class="checkboxList">
+               <ul ng-repeat="l in Locomotion">
+
+                       <div class="col-md-12 col-xs-6 col-sm-6 col-md-offset-1" >
+                       <input type="checkbox" ng-model="isChecked" ng-change="filterByLocomotion(l,isChecked)" id="l{{l.index}}" />
+                      
+
+                   <label for="l{{l.index}}"><li>{{l.Locomotion}}</li></label></li></div>
                </ul>
 
            </div>
@@ -130,7 +150,7 @@ font-family: 'Roboto', sans-serif;
 
 
   <div ng-repeat="t in items"><!-- using true to get exact ma-->
- <a href="#{{t.name}}">
+ <a href="#{{t._id}}">
   <div  ng-animate="animate" class="z-depth-3 card"><!--trying ng-animate-->
   <div class="row">
     <div class="col-md-4">
@@ -146,13 +166,23 @@ font-family: 'Roboto', sans-serif;
       <h6>{{t.name}}</h6>
     </div>
 
+
   </div>
   <div class="text-center row">
       <div class="col-md-6">
-      <h6><b>Price</b></h6>
+      <h6><b>Job</b></h6>
     </div>
       <div class="col-md-6">
-      <h6>{{t.price}}</h6>
+      <h6>{{t.job}}</h6>
+    </div>
+
+  </div>
+  <div class="text-center row">
+      <div class="col-md-6">
+      <h6><b>Locomotion</b></h6>
+    </div>
+      <div class="col-md-6">
+      <h6>{{t.Locomotion}}</h6>
     </div>
 
   </div>

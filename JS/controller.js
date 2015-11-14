@@ -16,8 +16,9 @@ console.log("error");
 var app = angular.module("myController", []);
 
 app.controller("robocontroller", function($scope, $http,$routeParams) {
-   if($routeParams.name==undefined){
-    $http.get('JSON/datarobo.json').
+
+   if($routeParams._id==undefined){
+    $http.get('JSON/561cf518cb8ba1268913141f.json').
     success(function(data, status, headers, config) {
 
       $scope.robo = data;
@@ -29,8 +30,8 @@ app.controller("robocontroller", function($scope, $http,$routeParams) {
     });
    }
    else{
-      console.log($routeParams.name);
-  $http.get('JSON/'+$routeParams.name+'.json').
+      console.log($routeParams._id);
+  $http.get('JSON/'+$routeParams._id+'.json').
     success(function(data, status, headers, config) {
 
       $scope.robo = data;

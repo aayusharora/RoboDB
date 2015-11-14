@@ -10,7 +10,7 @@ controller:'AvengersCtrl'
 templateUrl: 'robo.html',
 controller:'robocontroller'
 })
-.when('/:name', {
+.when('/:_id', {
 templateUrl: 'robo.html',
 controller:'robocontroller'
 })
