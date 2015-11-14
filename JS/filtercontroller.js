@@ -1,10 +1,10 @@
-var app = angular.module("myController", ["ngAnimate"]);
+var app = angular.module("Controller", ["ngAnimate"]);
 
     app.controller("AvengersCtrl",["$scope",function($scope)
     {
   $scope.technology = [
-    { name: "aero",index:0},
-    { name: "aeroies",index:1},
+    { name: "ASIMO",index:0},
+    { name: "123F",index:1},
     { name: "green1",index:2},
     { name: "Ygf",index:3},
     { name: "aero1",index:4},
@@ -22,11 +22,11 @@ var app = angular.module("myController", ["ngAnimate"]);
   ];
 
   $scope.association=[
-    {name:"aero", price: 1000},
-      {name:"aero", price: 1100},
-      {name:"aero", price: 1200},
-    { name:"aeroies",price: 1000},
-      { name:"aeroies",price: 1100},
+    {name:"ASIMO", price: 1000},
+      {name:"ASIMO", price: 1100},
+      {name:"ASIMO", price: 1200},
+    { name:"123F",price: 1000},
+      { name:"123F",price: 1100},
     { name:"green1",price: 4000},
     {name:"Ygf",price: 5000},
     {name:"aero1",price: 9000},
