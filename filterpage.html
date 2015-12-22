@@ -89,8 +89,8 @@ font-family: 'Roboto', sans-serif;
        <div class="row">
       <div id="teamCheckboxList" class="checkboxList">
         <div ng-repeat="t in technology">
-         <ul class="col-md-12 col-xs-6 col-sm-6 col-md-offset-1"> <input type="checkbox" ng-model="isChecked" ng-change="filterByTechnology(t,isChecked)" id="t{{t.index}}" />
-        <label for="t{{t.index}}"><li> {{t.name}}</li>
+         <ul class="col-md-12 col-xs-6 col-sm-6 col-md-offset-1"> <input type="checkbox" ng-model="isChecked" ng-change="filterByTechnology(t,isChecked)" id="{{t}}" />
+        <label for="{{t}}"><li> {{t}}</li>
           </label></div>
         </ul>
        
@@ -113,10 +113,10 @@ font-family: 'Roboto', sans-serif;
                <ul ng-repeat="p in job">
 
                        <div class="col-md-12 col-xs-6 col-sm-6 col-md-offset-1" >
-                       <input type="checkbox" ng-model="isChecked" ng-change="filterByJob(p,isChecked)" id="p{{p.index}}" />
+                       <input type="checkbox" ng-model="isChecked" ng-change="filterByJob(p,isChecked)" id="{{p}}" />
                       
 
-                   <label for="p{{p.index}}"><li>{{p.job}}</li></label></li></div>
+                   <label for="{{p}}"><li>{{p}}</li></label></li></div>
                </ul>
 
            </div>
@@ -133,10 +133,10 @@ font-family: 'Roboto', sans-serif;
                <ul ng-repeat="l in Locomotion">
 
                        <div class="col-md-12 col-xs-6 col-sm-6 col-md-offset-1" >
-                       <input type="checkbox" ng-model="isChecked" ng-change="filterByLocomotion(l,isChecked)" id="l{{l.index}}" />
+                       <input type="checkbox" ng-model="isChecked" ng-change="filterByLocomotion(l,isChecked)" id="{{l}}" />
                       
 
-                   <label for="l{{l.index}}"><li>{{l.Locomotion}}</li></label></li></div>
+                   <label for="{{l}}"><li>{{l}}</li></label></li></div>
                </ul>
 
            </div>
@@ -163,7 +163,7 @@ font-family: 'Roboto', sans-serif;
       <h6><b>Technology</b></h6>
     </div>
       <div class="col-md-6">
-      <h6>{{t.name}}</h6>
+      <h6>{{t.technology}}</h6>
     </div>
 
 
@@ -182,7 +182,7 @@ font-family: 'Roboto', sans-serif;
       <h6><b>Locomotion</b></h6>
     </div>
       <div class="col-md-6">
-      <h6>{{t.Locomotion}}</h6>
+      <h6>{{t.locomotion}}</h6>
     </div>
 
   </div>

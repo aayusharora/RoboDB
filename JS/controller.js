@@ -31,7 +31,7 @@ app.controller("robocontroller", function($scope, $http,$routeParams) {
    }
    else{
       console.log($routeParams._id);
-  $http.get('JSON/'+$routeParams._id+'.json').
+ /* $http.get('JSON/'+$routeParams._id+'.json').
     success(function(data, status, headers, config) {
 
       $scope.robo = data;
@@ -40,7 +40,17 @@ app.controller("robocontroller", function($scope, $http,$routeParams) {
     }).
     error(function(data, status, headers, config) {
      console.log("error");
-    });
+    });*/
+
+
+for(i=0;i<robos.length;i++){
+  if(robos[i]._id==$routeParams._id){
+    $scope.robots=robos[i];
+
+  }
+   console.log(robos[i]._id);
+   console.log($routeParams._id);
+}
   }
 });
 

@@ -1,5 +1,4 @@
 
-
     <style>
     body{
 font-family: 'Roboto', sans-serif;
@@ -123,9 +122,6 @@ font-family: 'Roboto', sans-serif;
        	 <div class="col-md-2"></div>
        	 	<div class="col-md-8 darken-4">
        	 		 <nav class="indigo">
-                
-        <div class="nav-wrapper">
-           <nav class="indigo">
 
         <div class="nav-wrapper">
 
@@ -160,12 +156,12 @@ font-family: 'Roboto', sans-serif;
          </div>
       </div>
       <div class="row">
-         <div class="col-md-12 col-xs-12 col-sm-12"  ng-repeat="robots in robo">
+         <div class="col-md-12 col-xs-12 col-sm-12" >
          	<img class="image responsive-img" ng-src="{{robots.titleImage}}"/>
          </div>
       </div>
       <div class="row">
-         <div class="col-md-12 col-xs-12 col-sm-12"  ng-repeat="robots in robo">
+         <div class="col-md-12 col-xs-12 col-sm-12">
           <div class="text-center"><h6>{{robots.name}}</h6></div>
          </div>
       </div>
@@ -175,7 +171,7 @@ font-family: 'Roboto', sans-serif;
          </div>
       </div>
       <div class="row">
-         <div class="col-md-12 col-xs-12 col-sm-12"  ng-repeat="robots in robo">
+         <div class="col-md-12 col-xs-12 col-sm-12">
           <div class="text-center"><h6>{{robots.name}}</h6></div>
          </div>
       </div>
@@ -203,13 +199,13 @@ font-family: 'Roboto', sans-serif;
               <div  class="z-depth-3 card">
                 <div class="row clearfix">
 
-                  <div ng-repeat="robots in robo" class="col-md-6 col-sm-12 col-xs-12">
+                  <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="card-image"><!--card image-->
                       <img class="main thumbnail responsive-img" ng-src="{{robots.titleImage}}"/>
                   
                      </div>
                   </div>
-                  <div ng-repeat="robots in robo" style="padding-top:2%" class= "col-md-6 col-sm-12 col-xs-12">
+                  <div  style="padding-top:2%" class= "col-md-6 col-sm-12 col-xs-12">
                   
                   <div style="font-size:20px" class="bold text-center">
                    
@@ -305,7 +301,7 @@ font-family: 'Roboto', sans-serif;
                              <td>Country</td>-->
                   </div>
               </div>
-             <div  ng-repeat="robots in robo"class="row">
+             <div class="row">
               <hr id="border">
               <div class="col-md-12 col-xs-12 col-sm-12">
                <div class="row">
@@ -363,7 +359,7 @@ font-family: 'Roboto', sans-serif;
                     <td>Lorem ipsum dolor</td>
                  </tr>
               </table>-->
-             <div class="text-center" ng-repeat="robots in robo"> {{robots.Description}}</div>
+             <div class="text-center" > {{robots.Description}}</div>
                   </div>
               
               </div>
@@ -382,7 +378,7 @@ font-family: 'Roboto', sans-serif;
                     <!--card image-->
                       <div class="col-md-12 col-xs-12 col-sm-12"><h5>Images</h5></div>
                     </div>
-                       <div ng-repeat="robots in robo" class="center  row">
+                       <div class="center  row">
                         <div class="col-md-6 col-sm-12 col-xs-12"><img  class=" thumbnail responsive-img" ng-src="{{robots.galleryImageLinks[0]}}"/></div>
                         <div class="col-md-6 col-sm-12 col-xs-12"><img class="thumbnail responsive-img" ng-src="{{robots.galleryImageLinks[1]}}"/></div>
                         
