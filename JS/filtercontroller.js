@@ -1,8 +1,13 @@
 var app = angular.module("Controller", ["ngAnimate"]);
 
-    app.controller("AvengersCtrl",["$scope",function($scope)
-    {
+    app.controller("AvengersCtrl",["$scope","$location",function($scope,$location)
+    { 
            var technology=[];
+                       $scope.extra =extra
+           console.log(extra.length)
+           for(i=0;i<extra.length;i++){
+            console.log(extra[i]);
+           }
         for(i=0;i<robos.length;i++){
             technology.push.apply(technology,robos[i].technology);
         }
@@ -42,6 +47,7 @@ $scope.trackfunction=function(arr,$scope){
 }
 
 */
+
 var filterByTechnology=[];// contains the filter constraints
         var filterByJob=[];
          var filterByLocomotion=[];
@@ -110,12 +116,15 @@ $scope.filterByLocomotion=function(t,checkBoxVal){
             _.each(filterByTechnology, function (fil) {//_each is like for loop/ filterByis array and fil is an element of filterByTechnology just like filterByTechnology[0]  filterByTechnology[1] n soo on
 
                 _.each($scope.association, function (assoc) {// similiarly assoc is element of assocaiton
-                    if (fil == assoc.technology) {
+                    console.log(assoc.technology);
+                    console.log(fil)
+                    for(var i in assoc.technology){//This loop is to check objects of  Technology  Array
+                    if (fil == assoc.technology[i]) {
                         $scope.items.push(assoc);
                         console.log(assoc);
                     }
 
-
+                        }
 
                 })
 
@@ -136,8 +145,12 @@ $scope.filterByLocomotion=function(t,checkBoxVal){
 
                 _.each(filterByJob, function (fil) {//_each is like for loop/ filterByis array and fil is an element of filterByTechnology just like filterByTechnology[0]  filterByTechnology[1] n soo on
                     console.log(fil)
-                    _.each(items, function (item) {// similiarly assoc is element of assocaiton
-                        if (fil == item.job) {
+                    _.each(items, function (item) {
+                    // similiarly assoc is element of assocaiton
+
+                        for(var i in item.job)
+
+                        if (fil == item.job[i]) {
                             console.log("glll")
                             $scope.items.push(item);
                         }
@@ -163,12 +176,15 @@ $scope.filterByLocomotion=function(t,checkBoxVal){
                 _.each(filterByLocomotion, function (fil) {//_each is like for loop/ filterByis array and fil is an element of filterByTechnology just like filterByTechnology[0]  filterByTechnology[1] n soo on
                     console.log(fil);
                     _.each(items, function (item) {// similiarly assoc is element of assocaiton
-                        if (fil == item.Locomotion) {
+                       for(var i in item.locomotion){
+                        console.log(item)
+                            console.log(item.locomotion[i])
+                        if (fil == item.locomotion[i]) {
                             console.log("glll")
                             $scope.items.push(item);
                         }
 
-
+                         }
 
                     })
 
@@ -183,10 +199,51 @@ $scope.filterByLocomotion=function(t,checkBoxVal){
               
         }
 
+ console.log($location);
+            console.log("hello");
+            console.log(technology);
+            $scope.check=function(ev){
+                console.log(ev);
 
+                for(i=0;i<technology.length;i++)
+                { 
+                    console.log(filterByTechnology[i])
+                    if(ev==technology[i]){
+                        checkBoxVal=true;
+                         
+                    }
+                }
+            }
+          $scope.checkid=function(ev){
+           
+                for(var i=0;i<=$scope.association.length;i++){
+                    console.log($scope.association[i])
+                    for(var i in $scope.association[i]){
+                     
+                    }
 
-            console.log($scope.items)
+                }
+          }  
+      
+      for(i=0;i<technology.length;i++){
+         if($location.search().foo==technology[i]){
+            $scope.filterByTechnology($location.search().foo,true)
+           
+          angular.element($($location.search().foo)).selector
+        }
+      }
+         
+      for(i=0;i<job.length;i++){
+         if($location.search().foo==job[i]){
+            $scope.filterByJob($location.search().foo,true)
+        }
+      }
 
+      for(i=0;i<Locomotion.length;i++){
+         if($location.search().foo==Locomotion[i]){
+            $scope.filterByLocomotion($location.search().foo,true)
+        }
+      }   
 }])
 
 

@@ -60,7 +60,7 @@ font-family: 'Roboto', sans-serif;
       <nav class="indigo">
     <div class="nav-wrapper">
       <div class="text-center input-field">
-              <input id="search" type="search" required ng-model="text">
+              <input id="search" type="search" required   ng-model="patient">
               <label for="search"><i class="material-icons">search</i></label>
               
             </div>
@@ -89,7 +89,7 @@ font-family: 'Roboto', sans-serif;
        <div class="row">
       <div id="teamCheckboxList" class="checkboxList">
         <div ng-repeat="t in technology">
-         <ul class="col-md-12 col-xs-6 col-sm-6 col-md-offset-1"> <input type="checkbox" ng-model="isChecked" ng-change="filterByTechnology(t,isChecked)" id="{{t}}" />
+         <ul class="col-md-12 col-xs-6 col-sm-6 col-md-offset-1"> <input type="checkbox" ng-model="isChecked" ng-change="filterByTechnology(t,isChecked)" ng-checked="{{t.checked}}" id="{{t}}" />
         <label for="{{t}}"><li> {{t}}</li>
           </label></div>
         </ul>
@@ -149,12 +149,12 @@ font-family: 'Roboto', sans-serif;
   <div style="border-left:solid 3px  #3F51B5"class="col-md-11 col-xs-12 col-sm-12 ">
 
 
-  <div ng-repeat="t in items"><!-- using true to get exact ma-->
+  <div ng-repeat="t in items|filter:patient"><!-- using true to get exact ma-->
  <a href="#{{t._id}}">
   <div  ng-animate="animate" class="z-depth-3 card"><!--trying ng-animate-->
   <div class="row">
     <div class="col-md-4">
-    <img style="margin-top:10%"class="filter-images img-thumbnail" width="200px" ,height="200px" src="images/{{t.name}}.jpeg"/>
+    <img style="margin-top:10%"class="filter-images img-thumbnail" width="200px" ,height="200px" src="{{t.titleImage}}"/>
     </div>
     <div class="col-md-8">
     <div class="text-center row"><h5><b>Title</b></h5></div>
@@ -162,28 +162,33 @@ font-family: 'Roboto', sans-serif;
       <div class="col-md-6">
       <h6><b>Technology</b></h6>
     </div>
-      <div class="col-md-6">
-      <h6>{{t.technology}}</h6>
+       <div class="col-md-6">
+      <div ng-repeat="x in t.technology"class="col-md-12">
+      <h6>{{x}}</h6>
     </div>
-
+       </div>
 
   </div>
-  <div class="text-center row">
+<div class="text-center row">
       <div class="col-md-6">
       <h6><b>Job</b></h6>
     </div>
-      <div class="col-md-6">
-      <h6>{{t.job}}</h6>
+       <div class="col-md-6">
+      <div ng-repeat="x in t.job"class="col-md-12">
+      <h6>{{x}}</h6>
     </div>
+       </div>
 
   </div>
-  <div class="text-center row">
+<div class="text-center row">
       <div class="col-md-6">
       <h6><b>Locomotion</b></h6>
     </div>
-      <div class="col-md-6">
-      <h6>{{t.locomotion}}</h6>
+       <div class="col-md-6">
+      <div ng-repeat="x in t.locomotion"class="col-md-12">
+      <h6>{{x}}</h6>
     </div>
+       </div>
 
   </div>
   </div>

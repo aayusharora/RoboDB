@@ -4,15 +4,20 @@
    
     <meta name="theme-color" content="#2196F3">
     <title>Material UI One Page Theme</title>
+
     <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
     <link href="min/custom-min.css" type="text/css" rel="stylesheet" >
     <link href="CSS/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="CSS/style2.css" rel="stylesheet" type="text/css" />
+    <script src="JS/jquery.min.js"></script>
    
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
 </head>
 <style>
-
+.footer-copyright.default_color{
+ margin-bottom: -14px;
+ padding:5%;
+}
 </style><!--styling for third section carousel-->
     <script>
     $(document).ready(function(){
@@ -23,7 +28,6 @@
         </script>
 
 <body id="top" class="scrollspy" ng-controller="AvengersCtrl">
-
 <!-- Pre Loader -->
 <div id="loader-wrapper">
     <div id="loader"></div>
@@ -42,7 +46,7 @@
                 <div  class="right hide-on-med-and-down nav-wrapper">
       <form>
         <div class="input-field">
-          <input id="search" type="search" required>
+          <input id="search" type="search" required >
           <label for="search"><i class="material-icons">search</i></label>
           <i class="material-icons">close</i>
         </div>
@@ -61,14 +65,16 @@
        <div class="fullscreen slider">
     <ul class="slides">
       <li>
-        <a href="#filterpage" ng-click=check()><img src="img/02.jpg"></a> <!-- random image -->
+{{association.technology[0]}}
+        <a style="cursor:pointer"  id="{{association[0].technology[0]}}" href="#/filterpage?foo={{association[1].technology[0]}}"><img src="{{association[0].titleImage}}"></a> <!-- random image -->
         <div class="caption center-align">
           <h3>This is our big Tagline!</h3>
           <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
         </div>
-      </li>
+      </li> 
       <li>
-        <img src="img/03.jpg"> <!-- random image -->
+         <a style="cursor:pointer"  id="{{association[0].job[0]}}" href="#/filterpage?foo={{association[1].job[0]}}"><img src="{{association[1].titleImage}}"></a>
+        <!-- random image -->
         <div class="caption left-align">
           <h3>Left Aligned Caption</h3>
           <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
@@ -99,25 +105,24 @@
     <div class="container">
         <div class="card row">
             <div  class="col s12">
-                <h2 class="center header text_h2">ROBOT OF THE DAY </h2><hr  style="width:20%">
+                <h2 class="center">ROBOT OF THE DAY </h2><hr style="width:50%;height:2px">
             </div>
 
             <div  class="col s12 m6 l6">
                 <div class="center promo promo-example">
-                    <i class="mdi-image-flash-on"></i>
-                    <h5 class="promo-caption">Speeds up development</h5>
-                    <p class="light center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                   <img class="thumbnail ncenter img-responsive"style="padding:2%"src="{{association[0].titleImage}}"></img> 
+                   
                 </div>
             </div>
             <div class="col s12 m6 l6">
-                <div class="center promo promo-example">
-                    <i class="mdi-social-group"></i>
-                    <h5 class="promo-caption">User Experience Focused</h5>
-                    <p class="light center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                <div class="robotname">
+                    
+                  <center>  <h3  classs="pull-left "style="padding:2%">{{association[0].name}}</h3><center>
+                    <p style="padding:2%" class="pull-left light black-text ">{{association[0].Description}}</p>
                 </div>
+
+              <center> <button type="button" class="btn btn-primary">READ MORE</button></center>
             </div>
-           
-        </div>
     </div>
 </div>
 
@@ -125,12 +130,13 @@
 <div class="section scrollspy" id="work">
     <div class="container">
         <div class="card row">
-      <div class="col s12 m6 l6">
-                <div class="center promo promo-example">
-                    <i class="mdi-image-flash-on"></i>
-                    <h5 class="promo-caption">Speeds up development</h5>
-                    <p class="light center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-                </div>
+   
+                <div  class="col s12 m12 l12">
+               <center><h2 class="center">ROBOTS IN NEWS</h2></center><hr style="width:50%;height:2px">
+            </div>
+               
+                <div  class="center col s12 m12 l3" ng-repeat="t in extra" >
+                 <a href="view.html#/{{t._id}}"><img  class="thumbnail"style="display:inline;width:200px;height:200px" src="{{t.titleImage}}"></a>
             </div>
   
     </div>
@@ -140,12 +146,15 @@
 <div class="section scrollspy" id="work">
     <div class="container">
         <div class="card row">
-      <div class="col s12 m6 l6">
-                <div class="center promo promo-example">
-                    <i class="mdi-image-flash-on"></i>
-                    <h5 class="promo-caption">Speeds up development</h5>
-                    <p class="light center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-                </div>
+   
+                <div  class="col s12 m12 l12">
+               <center><h2 class="center">LATEST ROBOTS VIDEOS</h2></center><hr style="width:50%;height:2px">
+            </div>
+               
+                <div  class="center col s12 m12 l3" ng-repeat="t in extra" >
+                 <ul ><li><div class="video-container">
+        <iframe width="853" height="480" src="http://www.youtube.com/v/=JlRPICfnmhw" frameborder="0" allowfullscreen></iframe>
+      </div></li><ul>
             </div>
   
     </div>
@@ -156,206 +165,44 @@
 <div class="section scrollspy" id="work">
     <div class="container">
         <div class="card row">
-      <div class="col s12 m6 l6">
-                <div class="center promo promo-example">
-                    <i class="mdi-image-flash-on"></i>
-                    <h5 class="promo-caption">Speeds up development</h5>
-                    <p class="light center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-                </div>
+   
+                <div  class="col s12 m12 l12">
+               <center><h2 class="center">POPULAR ROBOTICS COMPETITION</h2></center><hr style="width:50%;height:2px">
+            </div>
+               
+                <div  class="center col s12 m12 l3" ng-repeat="t in extra" >
+                 <ul ><li><img class="thumbnail"style="display:inline;width:200px;height:200px" src="{{t.competition}}"></li><ul>
             </div>
   
     </div>
     </div>
 </div>
 
-<!--Parallax-->
-<!--
-<div class="parallax-container">
-    <div class="parallax"><img src="img/parallax1.png"></div>
-</div>
--->
-<!--Team-->
-<!--<div class="section scrollspy" id="team">
-    <div class="container">
-        <h2 class="header text_b"> Our Team </h2>
-        <div class="row">
-            <div class="col s12 m3">
-                <div class="card card-avatar">
-                    <div class="waves-effect waves-block waves-light">
-                        <img class="activator" src="img/avatar1.png">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Flash <br/>
-                            <small><em><a class="red-text text-darken-1" href="#">CEO</a></em></small></span>
-                        <p>
-                            <a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">
-                                <i class="fa fa-facebook-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">
-                                <i class="fa fa-twitter-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">
-                                <i class="fa fa-google-plus-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">
-                                <i class="fa fa-linkedin-square"></i>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m3">
-                <div class="card card-avatar">
-                    <div class="waves-effect waves-block waves-light">
-                        <img class="activator" src="img/avatar2.png">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Cat Woman<br/>
-                            <small><em><a class="red-text text-darken-1" href="#">Designer</a></em></small>
-                        </span>
-                        <p>
-                            <a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">
-                                <i class="fa fa-facebook-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">
-                                <i class="fa fa-twitter-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">
-                                <i class="fa fa-google-plus-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">
-                                <i class="fa fa-linkedin-square"></i>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m3">
-                <div class="card card-avatar">
-                    <div class="waves-effect waves-block waves-light">
-                        <img class="activator" src="img/avatar3.png">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">
-                            Capt. America <br/>
-                            <small><em><a class="red-text text-darken-1" href="#">CMO</a></em></small></span>
-                        <p>
-                            <a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">
-                                <i class="fa fa-facebook-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">
-                                <i class="fa fa-twitter-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">
-                                <i class="fa fa-google-plus-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">
-                                <i class="fa fa-linkedin-square"></i>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m3">
-                <div class="card card-avatar">
-                    <div class="waves-effect waves-block waves-light">
-                        <img class="activator" src="img/avatar4.png">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Robin<br/>
-                            <small><em><a class="red-text text-darken-1" href="#">Developer</a></em></small></span>
-                        <p>
-                            <a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">
-                                <i class="fa fa-facebook-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">
-                                <i class="fa fa-twitter-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">
-                                <i class="fa fa-google-plus-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">
-                                <i class="fa fa-linkedin-square"></i>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
--->
-<!--Footer-->
-<footer id="contact" class="page-footer default_color scrollspy">
-    <div class="container">  
-        <div class="row">
-            <div class="col l6 s12">
-                <form class="col s12" action="contact.php" method="post">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <i class="mdi-action-account-circle prefix white-text"></i>
-                            <input id="icon_prefix" name="name" type="text" class="validate white-text">
-                            <label for="icon_prefix" class="white-text">First Name</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <i class="mdi-communication-email prefix white-text"></i>
-                            <input id="icon_email" name="email" type="email" class="validate white-text">
-                            <label for="icon_email" class="white-text">Email-id</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="mdi-editor-mode-edit prefix white-text"></i>
-                            <textarea id="icon_prefix2" name="message" class="materialize-textarea white-text"></textarea>
-                            <label for="icon_prefix2" class="white-text">Message</label>
-                        </div>
-                        <div class="col offset-s7 s5">
-                            <button class="btn waves-effect waves-light red darken-1" type="submit">Submit
-                                <i class="mdi-content-send right white-text"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col l3 s12">
-                <h5 class="white-text">joashpereira.com</h5>
+ <footer class="page-footer page-footer default_color scrollspy">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
                 <ul>
-                    <li><a class="white-text" href="http://www.joashpereira.com/">Home</a></li>
-                    <li><a class="white-text" href="http://www.joashpereira.com/blog">Blog</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
                 </ul>
+              </div>
             </div>
-            <div class="col l3 s12">
-                <h5 class="white-text">Social</h5>
-                <ul>
-                    <li>
-                        <a class="white-text" href="https://www.behance.net/joashp">
-                            <i class="small fa fa-behance-square white-text"></i> Behance
-                        </a>
-                    </li>
-                    <li>
-                        <a class="white-text" href="https://www.facebook.com/joash.c.pereira">
-                            <i class="small fa fa-facebook-square white-text"></i> Facebook
-                        </a>
-                    </li>
-                    <li>
-                        <a class="white-text" href="https://github.com/joashp">
-                            <i class="small fa fa-github-square white-text"></i> Github
-                        </a>
-                    </li>
-                    <li>
-                        <a class="white-text" href="https://www.linkedin.com/in/joashp">
-                            <i class="small fa fa-linkedin-square white-text"></i> Linkedin
-                        </a>
-                    </li>
-                </ul>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2015 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">Made By Youstart</a>
             </div>
-        </div>
-    </div>
-    <div class="footer-copyright default_color">
-        <div class="container">
-            Made by <a class="white-text" href="http://joashpereira.com">Joash Pereira</a>. Thanks to <a class="white-text" href="http://materializecss.com/">materializecss</a>
-        </div>
-    </div>
-</footer>
-
+          </div>
+        </footer>
 
     <!--  Scripts-->
     <script src="min/plugin-min.js"></script>

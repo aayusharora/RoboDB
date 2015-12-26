@@ -46,7 +46,7 @@ app.controller("robocontroller", function($scope, $http,$routeParams) {
 for(i=0;i<robos.length;i++){
   if(robos[i]._id==$routeParams._id){
     $scope.robots=robos[i];
-
+    console.log($scope.robots);
   }
    console.log(robos[i]._id);
    console.log($routeParams._id);

@@ -155,6 +155,7 @@ font-family: 'Roboto', sans-serif;
       
          </div>
       </div>
+      
       <div class="row">
          <div class="col-md-12 col-xs-12 col-sm-12" >
          	<img class="image responsive-img" ng-src="{{robots.titleImage}}"/>
@@ -165,16 +166,7 @@ font-family: 'Roboto', sans-serif;
           <div class="text-center"><h6>{{robots.name}}</h6></div>
          </div>
       </div>
-      <div class="row">
-         <div class="col-md-12 col-xs-12 col-sm-12">
-         	<img class="image responsive-img" src="images/123RF.jpg"/>
-         </div>
-      </div>
-      <div class="row">
-         <div class="col-md-12 col-xs-12 col-sm-12">
-          <div class="text-center"><h6>{{robots.name}}</h6></div>
-         </div>
-      </div>
+   
       <!--latest section-->
     <div class="row">
          <div class="text-center title1 col-md-12">
@@ -217,7 +209,7 @@ font-family: 'Roboto', sans-serif;
                             </div>
                               <div class="col-md-7 col-sm-12 col-xs-12">
                                 <ul>
-                              <li>{{robots.locomotion}}<li>
+                              <li ng-repeat="t in robots.locomotion">{{t}} &nbsp;<li>
                               </ul>
                                </div>
                              </div>
@@ -225,10 +217,9 @@ font-family: 'Roboto', sans-serif;
                             <div class="row">
                             <div class="col-md-5 col-sm-12 col-xs-12 boldless">Job</div>
                             <div class="col-md-7 col-sm-12 col-xs-12">
-                              <ul><!--not the right way-->
-                                     <li>{{robots.job[0]}} ,</li>                   
-                                     <li>{{robots.job[1]}} ,</li> 
-                                     <li>{{robots.job[2]}}</li> 
+                              <ul ><!--not the right way-->
+                                     <li ng-repeat="t in robots.job">{{t}}</li>                   
+                                     
                                      
                                 </ul>
                             </div>
@@ -241,10 +232,8 @@ font-family: 'Roboto', sans-serif;
                             
                               <div class="col-md-7 col-sm-12 col-xs-12">
                               <ul>
-                              <li>{{robots.technology[0]}} ,</li>
-                              <li>{{robots.technology[1]}} ,</li>
-                              <li>{{robots.technology[2]}} ,</li>
-                              <li>{{robots.technology[3]}} </li>
+                              <li ng-repeat="t in robots.technology">{{t}}</li>
+                              
                                            <!---Not working-->
                             </ul>
                           </div>
@@ -255,7 +244,7 @@ font-family: 'Roboto', sans-serif;
                             
                             <div class="row">
                               <div class="col-md-5 col-sm-12 col-xs-12 boldless">Country</div>
-                            <div class="col-md-7 col-sm-12 col-xs-12"><li>{{robots.country}}</li></div>
+                            <div class="col-md-7 col-sm-12 col-xs-12"><li ng-repeat="t in robots.country">{{t}}</li></div>
                             
                      
                              </div>
@@ -292,7 +281,7 @@ font-family: 'Roboto', sans-serif;
                              </div>
                              <div class="row">
                               <div class="col-md-5 col-sm-12 col-xs-12 boldless">Start year</div>
-                            <div class="col-md-7 col-sm-12 col-xs-12"><li>{{robots.version}}</li></div>
+                            <div class="col-md-7 col-sm-12 col-xs-12"><li>{{robots.startYear}}</li></div>
                             
                      
                              </div>
