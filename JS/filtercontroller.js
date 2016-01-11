@@ -224,6 +224,23 @@ $scope.filterByLocomotion=function(t,checkBoxVal){
 
                 }
           }  
+          $scope.me=Boolean(false);
+          $scope.search=function(t){
+                  var t=t.toLowerCase();
+            for(i=0;i<technology.length;i++){
+                if(technology[i]==t){
+              $scope.me=Boolean(false);
+           $location.path('/filterpage').search('foo', t); 
+                break;
+                 console.log($scope.me);
+                }
+                else{
+
+                $scope.me=Boolean(true);
+                }
+            }
+          
+                     }
       
       for(i=0;i<technology.length;i++){
          if($location.search().foo==technology[i]){
@@ -243,7 +260,8 @@ $scope.filterByLocomotion=function(t,checkBoxVal){
          if($location.search().foo==Locomotion[i]){
             $scope.filterByLocomotion($location.search().foo,true)
         }
-      }   
+      } 
+
 }])
 
 
