@@ -1,210 +1,210 @@
-  <html ng-app='myController'>
+      <html ng-app='myController'>
 
-  <style>
- body{
-font-family: 'Roboto', sans-serif;
+      <style>
+     body{
+    font-family: 'Roboto', sans-serif;
+
+        }
+        li.ng-binding{
+          color:black;
+        }
+         li.ng-binding:hover{
+          color:#3D4EB0;
+
+        }
+        [type="checkbox"]:checked + label:before {
+        border-right: 2px solid #3D4EB0;
+        border-bottom: 2px solid #3D4EB0;
+
+        }
+      .animate-enter {
+      -webkit-transition: 1s linear all; /* Chrome */
+        transition: 8s linear all;
+        opacity: 0;
+      }
+      .animate-enter.animate-enter-active {
+        opacity: 1;
+      }
+     img.filter-images.img-thumbnail{
+      margin: 16px;
+     }
+      .card.filter{
+        overflow-y:hidden;
+        height:540px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        background-color: #fff;
+      }
+    .card1{
+      margin-left:1%;
 
     }
-    li.ng-binding{
-      color:black;
+    .row{
+      padding:0.5%;
     }
-     li.ng-binding:hover{
-      color:#3D4EB0;
-
+    .border{
+         border-bottom:  solid 3px  #3F51B5;
+         margin-bottom:4%;
+        }
+       .z-depth-3.card.filter.col-md-2.col-xs-12.col-sm-12{
+        margin-top:-4%;
+        padding: 3%;
+       }
+    .filters{
+      margin: 5%;
     }
-    [type="checkbox"]:checked + label:before {
-    border-right: 2px solid #3D4EB0;
-    border-bottom: 2px solid #3D4EB0;
+      </style>
+      <body  ng-controller="AvengersCtrl">
+      <div class="container-fluid">
+      <div class="main">
+      	<div class="header"></div>
+      
 
-    }
-  .animate-enter {
-  -webkit-transition: 1s linear all; /* Chrome */
-    transition: 8s linear all;
-    opacity: 0;
-  }
-  .animate-enter.animate-enter-active {
-    opacity: 1;
-  }
- img.filter-images.img-thumbnail{
-  margin: 16px;
- }
-  .card.filter{
-    overflow-y:hidden;
-    height:540px;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    background-color: #fff;
-  }
-.card1{
-  margin-left:1%;
+    <hr class="border">
+      <div class="row">
 
-}
-.row{
-  padding:0.5%;
-}
-.border{
-     border-bottom:  solid 3px  #3F51B5;
-     margin-bottom:4%;
-    }
-   .z-depth-3.card.filter.col-md-2.col-xs-12.col-sm-12{
-    margin-top:-4%;
-    padding: 3%;
-   }
-.filters{
-  margin: 5%;
-}
-  </style>
-  <body  ng-controller="AvengersCtrl">
-  <div class="container-fluid">
-  <div class="main">
-  	<div class="header"></div>
-  
+      <div class=" z-depth-3 card filter col-md-2 col-xs-12 col-sm-12">
+      <div class="text-center col-md-12 col-xs-12 col-sm-12">
+      	<h4>Filters</h4>
 
-<hr class="border">
-  <div class="row">
-
-  <div class=" z-depth-3 card filter col-md-2 col-xs-12 col-sm-12">
-  <div class="text-center col-md-12 col-xs-12 col-sm-12">
-  	<h4>Filters</h4>
-
-  </div>
-   <div class="filters row" > 
-   	<div class="row">
-   	<div class="col-md-12 col-xs-12 col-sm-12">
-     		<div  class="text-center col-md-12 col-sm-12 col-xs-12"><h5>Technology</h5></div>
-          	
-            
-   	</div>
       </div>
+       <div class="filters row" > 
+       	<div class="row">
+       	<div class="col-md-12 col-xs-12 col-sm-12">
+         		<div  class="text-center col-md-12 col-sm-12 col-xs-12"><h5>Technology</h5></div>
+              	
+                
+       	</div>
+          </div>
 
 
-       <div class="row">
-      <div id="teamCheckboxList" class="checkboxList">
-        <div ng-repeat="t in technology">
-         <ul class="col-md-12 col-xs-6 col-sm-6 col-md-offset-1"> <input type="checkbox" ng-model="isChecked" ng-change="filterByTechnology(t,isChecked)" ng-checked="{{t.checked}}" id="{{t}}" />
-        <label for="{{t}}"><li> {{t}}</li>
-          </label></div>
-        </ul>
-       
-      </div>
-    </div>
+           <div class="row">
+          <div id="teamCheckboxList" class="checkboxList">
+            <div ng-repeat="t in technology">
+             <ul class="col-md-12 col-xs-6 col-sm-6 col-md-offset-1"> <input type="checkbox" ng-model="isChecked" ng-change="filterByTechnology(t,isChecked)" ng-checked="{{t.checked}}" id="{{t}}" />
+            <label for="{{t}}"><li> {{t}}</li>
+              </label></div>
+            </ul>
+           
+          </div>
+        </div>
 
 
 
-    <div class="row">
-    <div class="col-md-12 col-xs-12 col-sm-12">
-      <div  class="text-center col-md-12 col-sm-12 col-xs-12"><h5>Job</h5></div>
-            
-            
-    </div>
-      </div>
-
-
-       <div class="row">
-           <div id="teamCheckboxList2" class="checkboxList">
-               <ul ng-repeat="p in job">
-
-                       <div class="col-md-12 col-xs-6 col-sm-6 col-md-offset-1" >
-                       <input type="checkbox" ng-model="isChecked" ng-change="filterByJob(p,isChecked)" id="{{p}}" />
-                      
-
-                   <label for="{{p}}"><li>{{p}}</li></label></li></div>
-               </ul>
-
-           </div>
-       </div>
         <div class="row">
-    <div class="col-md-12 col-xs-12 col-sm-12">
-      <div  class="text-center col-md-12 col-sm-12 col-xs-12"><h5>Locomotion</h5></div>
-            
-            
-    </div>
-      </div>
-       <div class="row">
-           <div id="teamCheckboxList2" class="checkboxList">
-               <ul ng-repeat="l in Locomotion">
+        <div class="col-md-12 col-xs-12 col-sm-12">
+          <div  class="text-center col-md-12 col-sm-12 col-xs-12"><h5>Job</h5></div>
+                
+                
+        </div>
+          </div>
 
-                       <div class="col-md-12 col-xs-6 col-sm-6 col-md-offset-1" >
-                       <input type="checkbox" ng-model="isChecked" ng-change="filterByLocomotion(l,isChecked)" id="{{l}}" />
-                      
 
-                  <label for="{{l}}"> <center><li>{{l}}</li></center></label></div>
-               </ul>
+           <div class="row">
+               <div id="teamCheckboxList2" class="checkboxList">
+                   <ul ng-repeat="p in job">
 
+                           <div class="col-md-12 col-xs-6 col-sm-6 col-md-offset-1" >
+                           <input type="checkbox" ng-model="isChecked" ng-change="filterByJob(p,isChecked)" id="{{p}}" />
+                          
+
+                       <label for="{{p}}"><li>{{p}}</li></label></li></div>
+                   </ul>
+
+               </div>
            </div>
-       </div>
-   
-       </div>
-  </div>
-  <div  class="col-md-8">
-      <div  class="col-md-1"></div>
-  <div style="border-left:solid 3px  #3F51B5"class="col-md-11 col-xs-12 col-sm-12 ">
+            <div class="row">
+        <div class="col-md-12 col-xs-12 col-sm-12">
+          <div  class="text-center col-md-12 col-sm-12 col-xs-12"><h5>Locomotion</h5></div>
+                
+                
+        </div>
+          </div>
+           <div class="row">
+               <div id="teamCheckboxList2" class="checkboxList">
+                   <ul ng-repeat="l in Locomotion">
+
+                           <div class="col-md-12 col-xs-6 col-sm-6 col-md-offset-1" >
+                           <input type="checkbox" ng-model="isChecked" ng-change="filterByLocomotion(l,isChecked)" id="{{l}}" />
+                          
+
+                      <label for="{{l}}"> <center><li>{{l}}</li></center></label></div>
+                   </ul>
+
+               </div>
+           </div>
+       
+           </div>
+      </div>
+      <div  class="col-md-8">
+          <div  class="col-md-1"></div>
+      <div style="border-left:solid 3px  #3F51B5"class="col-md-11 col-xs-12 col-sm-12 ">
 
 
-  <div ng-repeat="t in items|filter:patient"><!-- using true to get exact ma-->
- <a href="#{{t._id}}">
-  <div  ng-animate="animate" class="z-depth-3 card"><!--trying ng-animate-->
-  <div class="row">
-    <div class="col-md-4">
-    <center><img style="margin-top:10%"class="filter-images img-thumbnail" width="200px" ,height="200px" src="{{t.titleImage}}"/></center>
+      <div ng-repeat="t in items|filter:patient"><!-- using true to get exact ma-->
+     <a href="#{{t._id}}">
+      <div  ng-animate="animate" class="z-depth-3 card"><!--trying ng-animate-->
+      <div class="row">
+        <div class="col-md-4">
+        <center><img style="margin-top:10%"class="filter-images img-thumbnail" width="200px" ,height="200px" src="{{t.titleImage}}"/></center>
+        </div>
+        <div class="col-md-8">
+        <div class="text-center row"><h5><b>Title</b></h5></div>
+         <div class="text-center row">
+          <div class="col-md-6">
+          <h6><b>Technology</b></h6>
+        </div>
+           <div class="col-md-6">
+          <div ng-repeat="x in t.technology"class="col-md-12">
+          <h6>{{x}}</h6>
+        </div>
+           </div>
+
+      </div>
+    <div class="text-center row">
+          <div class="col-md-6">
+          <h6><b>Job</b></h6>
+        </div>
+           <div class="col-md-6">
+          <div ng-repeat="x in t.job"class="col-md-12">
+          <h6>{{x}}</h6>
+        </div>
+           </div>
+
+      </div>
+    <div class="text-center row">
+          <div class="col-md-6">
+          <h6><b>Locomotion</b></h6>
+        </div>
+           <div class="col-md-6">
+          <div ng-repeat="x in t.locomotion"class="col-md-12">
+          <h6>{{x}}</h6>
+        </div>
+           </div>
+
+      </div>
+      </div>
+
+
+      </div>
+      </div>	
+
+
+      </div>
+    </a>
+      </div>
     </div>
-    <div class="col-md-8">
-    <div class="text-center row"><h5><b>Title</b></h5></div>
-     <div class="text-center row">
-      <div class="col-md-6">
-      <h6><b>Technology</b></h6>
     </div>
-       <div class="col-md-6">
-      <div ng-repeat="x in t.technology"class="col-md-12">
-      <h6>{{x}}</h6>
-    </div>
-       </div>
+      </body>
+      <script>
+    $(document).ready(function(){
+      $(".card.filter").mouseenter(function(){
+        $(this).css("overflow-y","scroll");
 
-  </div>
-<div class="text-center row">
-      <div class="col-md-6">
-      <h6><b>Job</b></h6>
-    </div>
-       <div class="col-md-6">
-      <div ng-repeat="x in t.job"class="col-md-12">
-      <h6>{{x}}</h6>
-    </div>
-       </div>
+      })
+      $(".card.filter").mouseleave(function(){
+        $(this).css("overflow-y","hidden");
 
-  </div>
-<div class="text-center row">
-      <div class="col-md-6">
-      <h6><b>Locomotion</b></h6>
-    </div>
-       <div class="col-md-6">
-      <div ng-repeat="x in t.locomotion"class="col-md-12">
-      <h6>{{x}}</h6>
-    </div>
-       </div>
-
-  </div>
-  </div>
-
-
-  </div>
-  </div>	
-
-
-  </div>
-</a>
-  </div>
-</div>
-</div>
-  </body>
-  <script>
-$(document).ready(function(){
-  $(".card.filter").mouseenter(function(){
-    $(this).css("overflow-y","scroll");
-
-  })
-  $(".card.filter").mouseleave(function(){
-    $(this).css("overflow-y","hidden");
-
-  })
-})
-  </script>
-  </html>
+      })
+    })
+      </script>
+      </html>
