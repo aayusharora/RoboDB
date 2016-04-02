@@ -1,6 +1,7 @@
 # RoboDB
-Robot Wiki
-Open view.html for opening the project.
+
+#For Opening the Project
+Open view.html 
 # Snapshots
 1.
 <img src="images/1.PNG"/></br>
