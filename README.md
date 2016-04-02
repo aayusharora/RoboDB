@@ -1,8 +1,8 @@
 # RoboDB
 
-#For Opening the Project
+<h3>For Opening the Project</h3>
 Open view.html 
-# Snapshots
+<h3>Snapshots</h3>
 1.
 <img src="images/1.PNG"/></br>
 2.
